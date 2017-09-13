@@ -1,0 +1,263 @@
+---
+layout: post
+title: "轻量级行为树编辑器"
+date: 2015-04-22 17:27:31 +0800
+comments: true
+categories: "tool"
+tags: ["javaScript", "行为树"]
+---
+<!-- toc -->
+首先介绍[renatopp](https://github.com/renatopp)编写的基于js的轻量级行为树编辑器behavior3js
+
+仓库地址：[https://github.com/behavior3/behavior3js.git](https://github.com/behavior3/behavior3js.git)
+
+在线编辑器地址： [http://editor.behavior3.com/](http://editor.behavior3.com/)
+
+在制作动作游戏时，需要一个轻量级可跨平台的行为树编辑器，有幸在github上找到了这个项目。因为是用js写的，跨平台不在话下，比起其他C++等项目配置，运行和修改也都要简单很多。
+
+先看看编辑器的外表
+
+![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/bt01.png)
+
+基本编辑，导入，导出功能都已经很完备了，只需稍加修改即可应用在自己的项目中了。
+
+### Add custom node 增加自定义节点
+在helpers.js中加入如下代码
+```
+app.helpers.addDynamicParameterRow = function(table, key, value) {
+    var row = $('<tr></tr>');
+    $('<li class="header"><a href="#">'+category+'</a></li>');
+    var colKey = $('<td><input id="key" type="text" placeholder="Parameter key" value='+(key||"")+'></td>');
+    var colVal = $('<td><input id="value" type="text" placeholder="Parameter value" value='+(value||"")+'></td>');
+    var colCat = $('<td></td>');
+    var colOp = $('<td class="dynamic-table operators"><input type="button" class="operator" value="-"></td>');
+
+    colOp.click(app.events.onRemDynamicRow);
+
+    row.append(colKey);
+    row.append(colVal);
+    row.append(colCat);
+    row.append(colOp);
+    row.hide();
+    row.fadeIn(100);
+
+    table.append(row);
+}
+
+app.helpers.resetEditNodeRow = function(table, name, title) {
+    table.html('');
+    var row = $('<tr></tr>');
+    var colKey = $('<td><input id="name" type="text" placeholder="Node name" value='+name+'></td>');
+    var colVal = $('<td><input id="title" type="text" placeholder="Node title" value='+title+'></td>');
+    var colOp = $('<td class="operator"><input type="button" class="operator" value="+"></td>');
+
+    colOp.click(function() {
+        app.helpers.addEditNodeParameterRow(table);
+    });
+
+    row.append(colKey);
+    row.append(colVal);
+    row.append(colOp);
+    row.hide();
+    row.fadeIn(100);
+
+    table.append(row);
+}
+
+app.helpers.addEditNodeParameterRow = function(table, key, value) {
+    var row = $('<tr></tr>');
+    var colKey = $('<td><input id="key" type="text" placeholder="Parameter key" value='+(key||"")+'></td>');
+    var colVal = $('<td><input id="value" type="text" placeholder="Parameter value" value='+(value||"")+'></td>');
+    var colOp = $('<td class="dynamic-table operators"><input type="button" class="operator" value="-"></td>');
+
+    colOp.click(app.events.onRemDynamicRow);
+
+    row.append(colKey);
+    row.append(colVal);
+    row.append(colOp);
+    row.hide();
+    row.fadeIn(100);
+
+    table.append(row);
+}
+```
+这样我们就可以自定义节点的名称（对应类名）和标题（用于显示），并可以增加任意数量的参数，如下图所示：
+
+![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/bt02.png)
+
+### Save and read custom nodes 存取自定义节点
+
+大致看了一下代码，最后选择一个人偷懒的方法。清空编辑器，添加节点后，导出json，保存到工程本地，如下所示：
+
+```
+customJson = 
+{
+    "title": "A Behavior Tree",
+    "description": "",
+    "root": null,
+    "display": {
+        "camera_x": 481,
+        "camera_y": 477,
+        "camera_z": 1,
+        "x": 0,
+        "y": 0
+    },
+    "parameters": {},
+    "nodes": {},
+    "custom_nodes": [
+        {
+            "name": "behaviorTree.BTIsNearBy",
+            "title": "是否进入攻击范围",
+            "category": "condition",
+            "parameters": {
+                "target": "hero",
+                "distance": "100"
+            }
+        },
+        {
+            "name": "behaviorTree.BTAttack",
+            "title": "普通攻击",
+            "category": "action",
+            "parameters": {
+                "target": "hero"
+            }
+        },
+        {
+            "name": "behaviorTree.BTSelector",
+            "title": "选择器",
+            "category": "composite",
+            "parameters": {}
+        },
+        {
+            "name": "behaviorTree.BTSequence",
+            "title": "顺序执行器",
+            "category": "composite",
+            "parameters": {}
+        },
+        {
+            "name": "behaviorTree.BTParallel",
+            "title": "并行执行器",
+            "category": "composite",
+            "parameters": {}
+        },
+        {
+            "name": "behaviorTree.BTChase",
+            "title": "追逐",
+            "category": "action",
+            "parameters": {
+                "target": "hero",
+                "distance": "100"
+            }
+        },
+        {
+            "name": "behaviorTree.BTInverter",
+            "title": "反相结点",
+            "category": "decorator",
+            "parameters": {}
+        },
+        {
+            "name": "behaviorTree.BTWaitRandom",
+            "title": "待机随机",
+            "category": "action",
+            "parameters": {
+                "minTicks": "0",
+                "maxTicks": "60"
+            }
+        }
+    ]
+}
+```
+
+之后在app.initializeEditor方法最后添加代码：
+
+```
+app.view.importFromJSON(JSON.stringify(customJson));
+app.helpers.updateNodes();
+```
+
+这样每次初始化都会调用导入方法，把我们之前保存的自定义的节点加载进来。下面给出个最终效果图：
+
+![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/bt03.png)
+
+可以看到右侧还添加了说明，方便交给策划使用。
+
+### 命令行启动
+
+但是如果还需要搭建web服务器这样的操作才能使用还是不能让人满意的。
+
+这里使用Node.js来方便建立web服务器，把node可执行文件放到目录下，大约5MB。建立一个run.js，代码如下：
+
+```
+var PORT = 3002;
+
+var http = require('http');
+var url=require('url');
+var fs=require('fs');
+var path=require('path');
+
+var mine = {
+  "css": "text/css",
+  "gif": "image/gif",
+  "html": "text/html",
+  "ico": "image/x-icon",
+  "jpeg": "image/jpeg",
+  "jpg": "image/jpeg",
+  "js": "text/javascript",
+  "json": "application/json",
+  "pdf": "application/pdf",
+  "png": "image/png",
+  "svg": "image/svg+xml",
+  "swf": "application/x-shockwave-flash",
+  "tiff": "image/tiff",
+  "txt": "text/plain",
+  "wav": "audio/x-wav",
+  "wma": "audio/x-ms-wma",
+  "wmv": "video/x-ms-wmv",
+  "xml": "text/xml"
+};
+
+var server = http.createServer(function (request, response) {
+    var pathname = url.parse(request.url).pathname;
+    var realPath = path.join("tools", pathname);
+    console.log(realPath);
+    var ext = path.extname(realPath);
+    ext = ext ? ext.slice(1) : 'unknown';
+    fs.exists(realPath, function (exists) {
+        if (!exists) {
+            response.writeHead(404, {
+                'Content-Type': 'text/plain'
+            });
+
+            response.write("This request URL " + pathname + " was not found on this server.");
+            response.end();
+        } else {
+            fs.readFile(realPath, "binary", function (err, file) {
+                if (err) {
+                    response.writeHead(500, {
+                        'Content-Type': 'text/plain'
+                    });
+                    response.end(err);
+                } else {
+                    var contentType = mine[ext] || "text/plain";
+                    response.writeHead(200, {
+                        'Content-Type': contentType
+                    });
+                    response.write(file, "binary");
+                    response.end();
+                }
+            });
+        }
+    });
+});
+server.listen(PORT);
+```
+
+之后建一个bat或command调用run.js
+
+```
+start explorer http://localhost:3002/editor/index.html
+node run.js
+
+```
+
+码完收工。

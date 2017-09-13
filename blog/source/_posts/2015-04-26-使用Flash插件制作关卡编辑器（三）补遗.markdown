@@ -1,0 +1,109 @@
+---
+layout: post
+title: "使用Flash插件制作关卡编辑器（三）补遗"
+date: 2015-04-26 15:27:01 +0800
+comments: true
+categories: "tool"
+tags: ["AS3"]
+---
+<!-- toc -->
+## Flash控件使用
+
+下面是我使用到的控件，可以参考一下：
+
+![控件参考](http://7xkn3f.com1.z0.glb.clouddn.com/stage03.png)
+
+### DataGrid的使用
+
+ 1 设置表头
+ 
+```
+	dataGrid.columns = ["id", "level", "count", "phase", "wave", "behavior", "x"];
+```
+ 2 填充数据
+ 
+```
+	var dp:DataProvider = new DataProvider();
+	dp.addItem({id:obj["id"],level:obj["level"],count:obj["count"]||1,phase:obj["phase"],wave:obj["wave"]||1,behavior:obj["behavior"]||1,x:obj["x"],y:obj["y"],depth:obj["depth"]};);
+	dataGrid.dataProvider = dp;
+```
+
+填入columns中不存在的key-value是不会显示的。
+
+ 3 样式修改
+ 
+```
+	window.list.setStyle("cellRenderer",MyCellStyle);
+	window.list.setStyle("headerRenderer", MyHeaderStyle);
+```
+
+需要新建自定义样式文件:		
+
+```actionscript MyHeaderStyle.as
+package
+{
+	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
+	
+	import fl.controls.dataGridClasses.HeaderRenderer;
+
+	public class MyHeaderStyle extends HeaderRenderer {
+		
+		public function MyHeaderStyle():void {
+			super();
+		}
+		
+		override protected function drawBackground():void {
+			var format:TextFormat = new TextFormat();
+			format.font = "Arial";
+			format.size = 25;
+			format.color = 0x000000;
+			format.align = TextFormatAlign.CENTER;
+			setStyle("textFormat",format);
+			super.drawBackground();
+		}
+	}
+}
+```
+
+```actionscript MyCellStyle.as
+package
+{
+	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
+	
+	import fl.controls.listClasses.CellRenderer;
+	import fl.controls.listClasses.ICellRenderer;
+
+	public class MyCellStyle extends CellRenderer implements ICellRenderer {
+		
+		public function MyCellStyle():void {
+			super();
+		}
+		
+		override protected function drawBackground():void {
+			var format:TextFormat = new TextFormat();
+			format.color=0x000000;
+			format.size=25;
+			format.font="Arial";
+			format.align = TextFormatAlign.CENTER;
+			setStyle("textFormat",format);
+			super.drawBackground();
+		}
+	}
+}
+```
+
+## 编辑快捷键
+
+编辑>快捷键>窗口>其他面板，找到自己的插件面板设置快捷键即可。
+
+## 调试技巧
+
+如果每次修改jsfl或AS3都需要重新打包安装，那真是太反人类了。
+
+我们可以找到插件的安装目录，比如我的在这里：
+
+C:\Users\Administrator\AppData\Local\Adobe\Flash CS6\zh_CN\Configuration\WindowSWF
+
+然后覆盖文件，重新打开面板即可。

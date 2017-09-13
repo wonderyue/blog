@@ -1,0 +1,92 @@
+---
+layout: post
+title: "使用Flash插件制作关卡编辑器（二）通信与IO"
+date: 2015-04-26 14:21:51 +0800
+comments: true
+categories: "tool"
+tags: ["javaScript", "AS3"]
+---
+<!-- toc -->
+#### AS3调用Flash javaScript API(JSAPI)命令
+
+[MMExecute](http://help.adobe.com/zh_CN/FlashPlatform/reference/actionscript/3/adobe/utils/package.html#MMExecute)函数正是我们需要的。
+
+```
+MMExecute("fl.getDocumentDOM().library.items.length");
+```
+如上代码我们即可在AS3中通过调用JSAPI得到当前库元件数量。但是要注意，MMExecute只能运行在Flash CS中，急于在Flash Builder中尝试上述命令是行不通的，可以参考[上一节](/2015/04/25/2015-04-25-使用Flash插件制作关卡编辑器（一）分析和准备/)插件面板的制作方法。
+
+如果要给jsfl传参该怎么办呢？
+
+```
+private function log(s:String):void
+{
+	MMExecute("fl.trace(\""+s+"\");");
+}
+```
+如上所示，其实传参也不难，只需要注意转义就行了。
+
+同时，我们也看到了log的方法。因为只能在Flash中运行，所以AS3中的trace是看不到输出的，只有靠JSAPI的fl.trace才能在Flash的输出面板看到调试信息。
+
+通用通信方法：
+
+```
+private function runScript(pathAndName:String="",func:String="",params:String=""):String  
+{   
+	return MMExecute("fl.runScript(fl.configURI+\""+pathAndName+"\",\""+func+"\",\""+params+"\");");
+} 
+```
+使用方式：
+```
+var str:String = runScript("WindowSWF/StageEditor/script.jsfl","importFile");
+```
+jsfl的返回值为String，且不可修改，这决定了我们要传递复杂类型时必须采用特定结构转为字符串，这里选择json。
+
+#### json编解码
+
+##### AS3
+
+Flex 4.6以上的SDK自带了JSON包，提供JSON.stringify和JSON.parse方法。我一开始也是这么用的，后来被这个坑了最多的时间。也许是因为在Flash环境下运行时缺少了相应的库，没有继续深究，赶快换了老方法，导入com.adobe.serialization.json.JSON包，JSON.encode，JSON.decode，什么问题都没有了。
+
+不过依然要注意转义：
+```
+private function convert2JsonStr(s:String):String
+{
+	var myPattern:RegExp = /"/g;  
+	var ret:String = s.replace(myPattern, "\\\"");
+	return ret;
+}
+```
+##### jsfl
+
+jsfl端的JSON解析使用[json2.js](http://www.json.org/js.html)
+
+#### 文件读写
+
+因为AS3端我们使用的不是Flex工程，意味着我们没有操作本地文件的权限，这是Adobe出于安全考虑的。所以我们必须从jsfl入手，好在相关API是非常健全的。
+
+```
+//读文件
+FLfile.read(absolutePath)
+//写文件
+FLfile.write(absolutePath)
+//打开文件浏览器，选中要打开的文件，返回路径
+fl.browseForFileURL("open")
+//选择一个文件夹，返回路径
+fl.browseForFolderURL("Select a folder")
+```
+实际应用如下所示：
+
+```
+//导入文件
+function importFile() {
+    var filePath = fl.browseForFileURL("open")
+    var content = FLfile.read(filePath)
+    return content
+}
+//导出文件
+function exportFile(jsonStr, fileName) {
+    var filePath = fl.browseForFolderURL("Select a folder")
+    FLfile.write(filePath + "/" + fileName + ".json", jsonStr)
+}
+```
