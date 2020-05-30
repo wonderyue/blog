@@ -152,12 +152,12 @@
                     
 
                         
-                    
-
-                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
                         
                     
                     
@@ -210,87 +210,66 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="总体架构">总体架构</span></h2>
-<p>逻辑与渲染分离。如有需要，逻辑层可被客户端和服务器公用。</p>
-<h2><span id="移动与更新">移动与更新</span></h2>
-<p>slither.io与8bit贪吃蛇不同，它的移动是像素级的，而不是一个格子一个格子移动的。</p>
-<p>但是如果考虑绘制时，采用的是如下方法来决定身体的节数，就会发生身体的拐点处鳞片跳变（浮点数及精度原因），以及转弯不平滑的问题。</p>
+                <h2><span id="总体架构">总体架构</span></h2><p>逻辑与渲染分离。如有需要，逻辑层可被客户端和服务器公用。</p>
+<h2><span id="移动与更新">移动与更新</span></h2><p>slither.io与8bit贪吃蛇不同，它的移动是像素级的，而不是一个格子一个格子移动的。</p>
+<p>但是如果考虑绘制时，采用的是如下方法来决定身体的节数，就会发生身体的拐点处鳞片跳变（浮点数及精度原因），以及转弯不平滑的问题。 </p>
 <blockquote>
 <p>身体长度 / 鳞片间距 = 鳞片数量</p>
 </blockquote>
 <p>最终参考了贪吃蛇大作战的方法，蛇的最小移动速度就是鳞片的间距，具体实现如下：</p>
-<h3><span id="逻辑层">逻辑层</span></h3>
-<p>蛇与位置相关的逻辑数据只有拐点列表，它记录了蛇的头尾和每一个拐点，使蛇身由一条条线段连接而成。</p>
+<h3><span id="逻辑层">逻辑层</span></h3><p>蛇与位置相关的逻辑数据只有拐点列表，它记录了蛇的头尾和每一个拐点，使蛇身由一条条线段连接而成。</p>
 <p>移动时，头拐点按照蛇头朝向移动一段距离，同时尾拐点缩短同样距离，如果最后一段长度不足移动距离则继续向上查找。如此更新拐点列表。</p>
 <a id="more"></a>
-<h3><span id="渲染层">渲染层</span></h3>
-<p>蛇身由若干圆片组成，蛇的长度发生变化是会增删圆片，宽度变化时会改变渲染尺寸。<br>
-移动时，逻辑帧的每帧蛇移动的距离是圆片间的间距，所以将最后一个圆片移至蛇头即可。</p>
+<h3><span id="渲染层">渲染层</span></h3><p>蛇身由若干圆片组成，蛇的长度发生变化是会增删圆片，宽度变化时会改变渲染尺寸。<br>移动时，逻辑帧的每帧蛇移动的距离是圆片间的间距，所以将最后一个圆片移至蛇头即可。</p>
 <p>渲染帧是高于逻辑帧的，渲染帧更新时，每个圆片以前一个圆片为目标做插值移动，这样效果会比较平滑。</p>
-<h2><span id="碰撞检测">碰撞检测</span></h2>
-<h3><span id="头部与身体碰撞">头部与身体碰撞</span></h3>
-<h4><span id="抽象碰撞模型">抽象碰撞模型</span></h4>
-<ol>
+<h2><span id="碰撞检测">碰撞检测</span></h2><h3><span id="头部与身体碰撞">头部与身体碰撞</span></h3><h4><span id="抽象碰撞模型">抽象碰撞模型</span></h4><ol>
 <li>头部-&gt;点，身体-&gt;OBB（叉乘*4）</li>
 <li>头部-&gt;线段，身体-&gt;线段（叉乘*2）</li>
 <li>头部-&gt;圆，身体-&gt;线段</li>
 <li>头部-&gt;圆，身体-&gt;OBB</li>
 </ol>
-<h4><span id="算法优化">算法优化</span></h4>
-<ol>
-<li>
-<p>四叉树</p>
+<h4><span id="算法优化">算法优化</span></h4><ol>
+<li><p>四叉树</p>
 <ul>
 <li>结点存储的是蛇身体各段的OBB</li>
 <li>四叉树需要不停的维护，如果量级不大，可能反而浪费时间和空间</li>
 </ul>
 </li>
-<li>
-<p>包围盒</p>
+<li><p>包围盒</p>
 </li>
 </ol>
 <div id="flowchart-0" class="flow-chart"></div>
-<h4><span id="运算操作优化">运算操作优化</span></h4>
-<ul>
+
+<h4><span id="运算操作优化">运算操作优化</span></h4><ul>
 <li>避免sqrt，直接使用平方值比较</li>
 <li>避免三角函数和除法，使用向量运算</li>
 </ul>
 <p>实际开发选择了 4.头部-&gt;圆，身体-&gt;OBB 及 2.包围盒。效率没有任何问题，也就没有再进一步优化。</p>
-<h3><span id="蛇与食物碰撞">蛇与食物碰撞</span></h3>
-<h4><span id="抽象碰撞模型">抽象碰撞模型</span></h4>
-<ul>
+<h3><span id="蛇与食物碰撞">蛇与食物碰撞</span></h3><h4><span id="抽象碰撞模型">抽象碰撞模型</span></h4><ul>
 <li>头部-&gt;圆，食物-&gt;圆（其中一个换成点可能也没问题）</li>
 </ul>
-<h4><span id="算法优化">算法优化</span></h4>
-<ol>
+<h4><span id="算法优化">算法优化</span></h4><ol>
 <li>四叉树</li>
 <li>平均分片</li>
 </ol>
 <p>实际采用了 2.平均分片，效率就已经足够高了。</p>
-<h2><span id="同步">同步</span></h2>
-<ul>
-<li>
-<p>采用帧同步，需要同步的只有蛇的创建和玩家的操作。所有的碰撞检测，及蛇的分数，长度变化等计算全都放到客户端。</p>
+<h2><span id="同步">同步</span></h2><ul>
+<li><p>采用帧同步，需要同步的只有蛇的创建和玩家的操作。所有的碰撞检测，及蛇的分数，长度变化等计算全都放到客户端。</p>
 </li>
-<li>
-<p>游戏开始时会服务端决定随机种子，同步给各客户端。足以保证所有的随机结果是一致的（食物的随机产生，蛇的随机位置和朝向）。</p>
+<li><p>游戏开始时会服务端决定随机种子，同步给各客户端。足以保证所有的随机结果是一致的（食物的随机产生，蛇的随机位置和朝向）。</p>
 </li>
-<li>
-<p>碰撞的结果也是各自计算，结果完全相同。（吃食物，蛇的死亡）</p>
+<li><p>碰撞的结果也是各自计算，结果完全相同。（吃食物，蛇的死亡）</p>
 </li>
-<li>
-<p>蛇的死亡是需要通知服务器。</p>
+<li><p>蛇的死亡是需要通知服务器。</p>
 </li>
-<li>
-<p>服务器可以通过多数玩家的上报结果来简单甄别有无作弊现象。</p>
+<li><p>服务器可以通过多数玩家的上报结果来简单甄别有无作弊现象。</p>
 </li>
-<li>
-<p>支持中途加入，加入时间越晚，需要从头计算的数据越多，即便服务器已经过滤掉已死亡的玩家数据。这部分计算只能放到loading中，否则极其影响体验。</p>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">op1=>operation: 与蛇整体AABB碰撞检测
+<li><p>支持中途加入，加入时间越晚，需要从头计算的数据越多，即便服务器已经过滤掉已死亡的玩家数据。这部分计算只能放到loading中，否则极其影响体验。<br>  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">op1=>operation: 与蛇整体AABB碰撞检测
 op2=>operation: 与身体各段AABB碰撞检测
 op3=>operation: OBB等精确碰撞检测
 
-op1->op2->op3</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></li>
+op1->op2->op3</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+</li>
 </ul>
 
 

@@ -1,5 +1,5 @@
 $(window).scroll(function() {
-	if (window.innerWidth < 1100)
+	if (document.body.clientWidth < 1100)
 		return;
     $(window).scrollTop() > $(window).height()*0.5 ? $("#rocket").addClass("show") : $("#rocket").removeClass("show");
 });

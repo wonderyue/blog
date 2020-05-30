@@ -152,12 +152,12 @@
                     
 
                         
-                    
-
-                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
                         
                     
                     
@@ -210,14 +210,11 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="需求">需求</span></h2>
-<p>类似台湾夜市弹珠台或者柏青哥<br>
-<img src="pinball.jpg" alt="enter image description here"></p>
+                <h2><span id="需求">需求</span></h2><p>类似台湾夜市弹珠台或者柏青哥<br><img src="pinball.jpg" alt="enter image description here"></p>
 <ul>
 <li>蓄力，拉杆，将弹珠弹出</li>
-<li>经过碰撞落入下方槽中</li>
+<li>经过碰撞落入下方槽中<h2><span id="分析">分析</span></h2></li>
 </ul>
-<h2><span id="分析">分析</span></h2>
 <p><strong>首先，有两点看似矛盾的需求：</strong></p>
 <ul>
 <li>需要真实的物理表现，结果遵循物理规律</li>
@@ -244,19 +241,18 @@
 </ul>
 <p><strong>可以排除的解决方案：</strong></p>
 <ol>
-<li>
-<p>由美术制作整个游戏过程的动画</p>
-<p>这个方案稍微思考几秒钟就可以pass了：</p>
+<li><p>由美术制作整个游戏过程的动画</p>
+<p> 这个方案稍微思考几秒钟就可以pass了：</p>
 <ul>
 <li>工作量巨大</li>
 <li>弹珠台布局即使微调也会导致动画重做</li>
 <li>制作出符合物理规律的动画的难度</li>
-<li>表现效果</li>
-</ul>
+<li><p>表现效果</p>
 <p>感觉后面还有100条</p>
 </li>
-<li>
-<p>集成物理引擎</p>
+</ul>
+</li>
+<li><p>集成物理引擎</p>
 <ul>
 <li>工作量较大</li>
 <li>增加包体积</li>
@@ -267,9 +263,7 @@
 <p><strong>最终方案：</strong></p>
 <p>使用其他工具记录过程，在客户端中还原。</p>
 <p>考虑到开发效率，选用Unity。</p>
-<h2><span id="实际开发遇到的问题">实际开发遇到的问题</span></h2>
-<p><strong>精度：</strong><br>
-美术输出的弹珠模型尺寸与Unity的Project Settings -&gt; PhysicsManager -&gt; Default Contact Offset非常接近，即模型尺寸与误差范围过于接近。这就导致表现效果很不好，还没接触到就弹开了，精度改得过小又会有物体已经彼此重叠才发生碰撞的现象。最终解决办法倒也简单，将所有模型放大N倍（统一拖到一个新的父节点统一放大即可），输出路线时再缩小N倍，误差就被吃掉了。</p>
+<h2><span id="实际开发遇到的问题">实际开发遇到的问题</span></h2><p><strong>精度：</strong><br>美术输出的弹珠模型尺寸与Unity的Project Settings -&gt; PhysicsManager -&gt; Default Contact Offset非常接近，即模型尺寸与误差范围过于接近。这就导致表现效果很不好，还没接触到就弹开了，精度改得过小又会有物体已经彼此重叠才发生碰撞的现象。最终解决办法倒也简单，将所有模型放大N倍（统一拖到一个新的父节点统一放大即可），输出路线时再缩小N倍，误差就被吃掉了。</p>
 
 
                 <hr>

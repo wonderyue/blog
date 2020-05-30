@@ -145,12 +145,12 @@
                     
 
                         
-                    
-
-                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
                         
                     
                     
@@ -250,11 +250,9 @@ Sublime......
         </h3>
         <div class="post-content-preview">
             完整设计并完成了一款2D横版动作游戏。对比刚入行时，现在做游戏架构设计，考虑最多的关键词是“解耦”，“数据驱动”，“自动化”。这次设计也是本着这样的原则。
-打击判定
-1.  碰撞检测方式选择：
-
+打击判定1.  碰撞检测方式选择：
 物理引擎：最偷懒的方式，通常有物理引擎对应的编辑器来编辑碰撞体（3D）或碰撞框（2D）。以2D为例，boundingBox通常编辑为圆形或多边形，适用于精度要求高而效率要求不高的情况。
-AABB：效......
+AABB：效率最......
         </div>
     </a>
     
@@ -283,13 +281,11 @@ AABB：效......
             补遗
         </h3>
         <div class="post-content-preview">
-            Flash控件使用
-下面是我使用到的控件，可以参考一下：
+            Flash控件使用下面是我使用到的控件，可以参考一下：
 
-DataGrid的使用
-1 设置表头
+DataGrid的使用 1 设置表头
 1dataGrid.columns = ["id", "level", "count", "phase", "wave", "behavior", "x"];
-2 填充数据
+ 2 填充数据
 123var dp:DataProvider = new DataProvider();dp.addItem(&#123;......
         </div>
     </a>
@@ -317,10 +313,9 @@ DataGrid的使用
             通信与IO
         </h3>
         <div class="post-content-preview">
-            AS3调用Flash javaScript API(JSAPI)命令
-MMExecute函数正是我们需要的。
+            AS3调用Flash javaScript API(JSAPI)命令MMExecute函数正是我们需要的。
 1MMExecute("fl.getDocumentDOM().library.items.length");
-如上代码我们即可在AS3中通过调用JSAPI得到当前库元件数量。但是要注意，MMExecute只能运行在Flash CS中，急于在Flash Builder中尝试上述命令是......
+如上代码我们即可在AS3中通过调用JSAPI得到当前库元件数量。但是要注意，MMExecute只能运行在Flash CS中，急于在Flash Builder中尝试上述命令是行......
         </div>
     </a>
     
@@ -348,7 +343,6 @@ MMExecute函数正是我们需要的。
         </h3>
         <div class="post-content-preview">
             功能描述
-
 在Flash CS中通过元件拖拽完成场景中背景，装饰物，主角，敌人等元素的布置
 通过jsfl完成元件信息解析，并传递给AS做进一步处理（关键）
 使用AS3编写插件面板，展示jsfl传来的信息，并通过表单，输入框等进行进一步编辑
@@ -358,8 +352,7 @@ MMExecute函数正是我们需要的。
 
 插件面板：
 
-jsfl准备
-jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操......
+jsfl准备jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操作，......
         </div>
     </a>
     
@@ -391,9 +384,7 @@ jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很�
 
 基本编辑，导入，导出功能都已经很完备了，只需稍加修改即可应用在自己的项目中了。
 
-Add custom node 增加自定义节点
-在helpers.js中加入如下代码
-1......
+Add custom node 增加自定义节点在helpers.js中加入如下代码123......
         </div>
     </a>
     
@@ -426,12 +417,9 @@ Add custom node 增加自定义节点
 目前在做egret项目，首先就动手做了一个仿制Mecanim的FSM编辑器。工具做得越早，受益越多。
 仓库地址：https://github.com/wonderyue/Animator
 简要说明
-
-
 State：状态。成员变量中包含Transition数组。
 
-
-Transition......
+Transition：状态......
         </div>
     </a>
     
@@ -488,9 +476,8 @@ Transition......
             
         </h3>
         <div class="post-content-preview">
-            
-喝了一口茶，因为某个词的启发，思绪自由地伸展着。司磊准时出现了，他穿着便装，纯色的T恤和裤子，也没有佩戴任何首饰，很简单。这种再会的场面和我想象中的不差分毫。因为他是个不容易改变的人。
-大学期间，司磊一直是我追随的对象，他的心理年龄比我大很多。我想，那是因为他的经历比我丰富，然而这又与他的不易改变相矛盾。所以有时我觉得我完全不了解这个人，交往得越深越能感受到这点。某个角落，任何角色都无法给......
+             　　喝了一口茶，因为某个词的启发，思绪自由地伸展着。司磊准时出现了，他穿着便装，纯色的T恤和裤子，也没有佩戴任何首饰，很简单。这种再会的场面和我想象中的不差分毫。因为他是个不容易改变的人。
+　　大学期间，司磊一直是我追随的对象，他的心理年龄比我大很多。我想，那是因为他的经历比我丰富，然而这又与他的不易改变相矛盾。所以有时我觉得我完全不了解这个人，交往得越深越能感受到这点。某个角落，任何角色......
         </div>
     </a>
     
@@ -517,11 +504,10 @@ Transition......
             
         </h3>
         <div class="post-content-preview">
-            
-船稳稳地航行着，风和日丽，海鸥不时地落在栏杆上。水手们洗好了衣服，大多半裸着躺在甲板上晒太阳。
-“天气真他妈好！”大胡子说了句，说的时候他那堆在一起的肚皮还一鼓一鼓的。
-大伙一起跟着嘿嘿的笑着。忽然谁的肚子叫了，我发誓那是我听过的肚子所能发出的最响的声音了。昨天我也发过同样的誓，那是大胃托德一直在刷新他自己的记录的原因。
-听到这个下厨信号的潘尼已经伸伸腰站起来了。他真是个好厨子，他做的菜好......
+             　　船稳稳地航行着，风和日丽，海鸥不时地落在栏杆上。水手们洗好了衣服，大多半裸着躺在甲板上晒太阳。
+　　“天气真他妈好！”大胡子说了句，说的时候他那堆在一起的肚皮还一鼓一鼓的。
+　　大伙一起跟着嘿嘿的笑着。忽然谁的肚子叫了，我发誓那是我听过的肚子所能发出的最响的声音了。昨天我也发过同样的誓，那是大胃托德一直在刷新他自己的记录的原因。
+　　听到这个下厨信号的潘尼已经伸伸腰站起来了。他真是个好......
         </div>
     </a>
     
@@ -576,19 +562,19 @@ Transition......
     <div class="tags">
         
             
-        
-            
-        
-            
-            <a href="/tags/#game" title="game" rel="6">game</a>
-            
-        
-            
             <a href="/tags/#writing" title="writing" rel="8">writing</a>
             
         
             
             <a href="/tags/#drawing" title="drawing" rel="6">drawing</a>
+            
+        
+            
+        
+            
+        
+            
+            <a href="/tags/#game" title="game" rel="6">game</a>
             
         
             
