@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="on the road">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          使用Flash制作关卡编辑器(1) - 塗鴉兒童 Wondery
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2015/04/25/2015-04-25-使用Flash插件制作关卡编辑器（一）分析和准备/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../../../css/hux.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../../../css/widget.css">
+
+    <link rel="stylesheet" href="../../../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../../../css/signature.css">
+
+    <link rel="stylesheet" href="../../../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="atom.xml" title="Wondery" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <!-- <div class="tags">
+                            
+                              <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                            
+                        </div> -->
+                        <h1>使用Flash制作关卡编辑器(1)</h1>
+                        <h2 class="subheading">分析和准备</h2>
+                        <span class="meta">
+                            Posted on 2015-04-25
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wondery | 塗鴉兒童</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3><span id="功能描述">功能描述</span></h3>
+<ul>
+<li>在Flash CS中通过元件拖拽完成场景中背景，装饰物，主角，敌人等元素的布置</li>
+<li>通过jsfl完成元件信息解析，并传递给AS做进一步处理（关键）</li>
+<li>使用AS3编写插件面板，展示jsfl传来的信息，并通过表单，输入框等进行进一步编辑</li>
+<li>导出配置文件</li>
+</ul>
+<p>布置场景：</p>
+<p><img src="stage01.png" alt="布置场景"></p>
+<p>插件面板：</p>
+<p><img src="stage02.png" alt="插件面板"></p>
+<h3><span id="jsfl准备">jsfl准备</span></h3>
+<p>jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操作，如批量命名，修改元件属性等。</p>
+<p>jsfl用很多实用的方法，可参见<a href="http://help.adobe.com/zh_CN/flash/cs/extend/flash_cs5_extending.pdf" target="_blank" rel="noopener">官方文档</a>。这里只介绍我们需要用到的方法。</p>
+<a id="more"></a>
+<h5><span id="1-遍历库元件">1. 遍历库元件</span></h5>
+<p>获取所有库元件：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> itemArray = fl.getDocumentDOM().<span class="keyword">library</span>.items</span><br></pre></td></tr></table></figure>
+<p>会得到一个数组，我们可以通过元件名或链接名或类型来获取自己想要的元件：</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linkageClassName = itemArray[i].linkageClassName;   <span class="comment">//链接名</span></span><br><span class="line"><span class="keyword">var</span> itemName = itemArray[i].<span class="keyword">name</span>;                       <span class="comment">//元件名</span></span><br><span class="line"><span class="keyword">var</span> itemType= itemArray[i].itemType;                    <span class="comment">//类型</span></span><br></pre></td></tr></table></figure>
+<p>有时我们会有选中某个元件的需求，可以这样：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">fl</span><span class="selector-class">.getDocumentDOM</span>()<span class="selector-class">.library</span><span class="selector-class">.selectItem</span>(<span class="selector-tag">itemName</span>);</span><br></pre></td></tr></table></figure>
+<p>目前我们已经可以获取元件了，而我们编辑的场景也是一个元件。至此，我们可以进行下一步了，就是遍历该场景中的元素。</p>
+<h5><span id="2-遍历场景中元素">2. 遍历场景中元素</span></h5>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for <span class="params">(var <span class="attr">k</span> = item.timeline.layers.length - 1; k &gt;= 0; k--)</span> &#123; <span class="string">//</span>遍历图层,item即为场景元件</span><br><span class="line">    for <span class="params">(var n in item.timeline.layers[k].frames)</span> &#123; <span class="string">//</span>遍历所有帧  </span><br><span class="line">        for <span class="params">(var m in item.timeline.layers[k].frames[n].elements)</span> &#123; <span class="string">//</span>遍历所有帧里的可视元素  </span><br><span class="line">            var element = item.timeline.layers[k]<span class="string">.frames</span>[n]<span class="string">.elements</span>[m]</span><br><span class="line">            <span class="keyword">if</span> <span class="params">(!element.libraryItem)</span> &#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            var elementName = element.libraryItem.name</span><br><span class="line">            <span class="string">//</span>按照元件名做不同处理,可获取的信息参考</span><br><span class="line">            <span class="string">//</span>&#123;<span class="string">"name"</span>: element.libraryItem.name,</span><br><span class="line">            <span class="string">//</span> <span class="string">"x"</span>: element.x,</span><br><span class="line">            <span class="string">//</span> <span class="string">"y"</span>: element.y,</span><br><span class="line">            <span class="string">//</span> <span class="string">"depth"</span>: element.depth&#125;</span><br><span class="line">            <span class="string">...</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="自定义面板">自定义面板</span></h3>
+<ul>
+<li>使用Flash创建fla来制作我们的面板，而不是使用Flex，我们创建的依然是一个AS3工程。</li>
+<li>fla发布成swc，导入工程，用AS3显示面板</li>
+<li>编译AS3工程，生成swf文件</li>
+<li>使用Adobe Extension Manager将swf和jsfl打包成zxp（Flash插件安装包）</li>
+</ul>
+<p>Adobe Extension Manager打包需要一个mxi文件，格式大致如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">macromedia-extension</span> <span class="attr">name</span>=<span class="string">"StageEditor"</span> <span class="attr">version</span>=<span class="string">"1.0.0"</span> <span class="attr">type</span>=<span class="string">"command"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">author</span> <span class="attr">name</span>=<span class="string">"Wonder Yue"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">products</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">product</span> <span class="attr">name</span>=<span class="string">"Flash"</span> <span class="attr">version</span>=<span class="string">"11"</span> <span class="attr">primary</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">products</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span></span><br><span class="line">        &lt;![CDATA[</span><br><span class="line">        ]]&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ui-access</span>&gt;</span></span><br><span class="line">        &lt;![CDATA[</span><br><span class="line">        ]]&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ui-access</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">license-agreement</span>&gt;</span></span><br><span class="line">        &lt;![CDATA[</span><br><span class="line">        ]]&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">license-agreement</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">files</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span> <span class="attr">source</span>=<span class="string">"StageEditor/script.jsfl"</span> <span class="attr">destination</span>=<span class="string">"$flash/WindowSWF/StageEditor"</span>/&gt;</span> //需要打包的脚本</span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span> <span class="attr">source</span>=<span class="string">"StageEditor.swf"</span> <span class="attr">destination</span>=<span class="string">"$flash/WindowSWF"</span>/&gt;</span>                     //需要打包的swf</span><br><span class="line">    <span class="tag">&lt;/<span class="name">files</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">macromedia-extension</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>安装完成后我们就可以在Flash中通过“窗口&gt;其他面板”打开我们的自定义面板了</p>
+<p>下一节我们会介绍jsfl和AS3之间的通信，也是最关键的一步。</p>
+
+
+                <hr>
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2015/04/26/2015-04-26-使用Flash插件制作关卡编辑器（二）通信与IO/" data-toggle="tooltip" data-placement="top" title="使用Flash制作关卡编辑器(2)">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/04/22/2015-04-22-轻量级行为树编辑器/" data-toggle="tooltip" data-placement="top" title="轻量级行为树编辑器">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+            </div>
+
+            <!-- Table of Contents -->
+            
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">功能描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">jsfl准备</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">1. 遍历库元件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">2. 遍历场景中元素</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">自定义面板</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wonderyue">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wondery 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-164338400-1';
+    var _gaDomain = 'wonderdaystudio.com/';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="on the road">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          做一个简单的iOS应用 - 塗鴉兒童 Wondery
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2015/09/02/2015-09-02-做一个简单的iOS应用/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../../../css/hux.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../../../css/widget.css">
+
+    <link rel="stylesheet" href="../../../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../../../css/signature.css">
+
+    <link rel="stylesheet" href="../../../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="atom.xml" title="Wondery" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/rami-al-zayat-w33-zg-dNL4-unsplash.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <!-- <div class="tags">
+                            
+                              <a class="tag" href="/tags/#mobile" title="mobile">mobile</a>
+                            
+                        </div> -->
+                        <h1>做一个简单的iOS应用</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted on 2015-09-02
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wondery | 塗鴉兒童</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>想做一款iOS应用练练手，简单考察了一下，做天气或备忘录未免太简单，太复杂的又不适合练手，最终锁定了“历史上的今天”的展示应用，会涉及到网络请求，网络图片加载，TableView，WebView等，难度适中，开整。</p>
+<h1><span id="工具">工具</span></h1>
+<p>向以下伟大的工具致敬：</p>
+<h2><span id="storyboard">StoryBoard</span></h2>
+<p>依然有人因为各种原因排斥使用StoryBoard，但我一贯认为解耦是必须的，有问题就解决问题，放弃使用转而手写UI是是workflow的倒退。</p>
+<p>要点：</p>
+<ul>
+<li>autoLayout</li>
+<li>seque</li>
+</ul>
+<p>感谢林老师的<a href="http://www.imooc.com/space/teacher/id/225594" target="_blank" rel="noopener">视频教程</a>，零基础与负基础的福音。</p>
+<h2><span id="cocoapods">CocoaPods</span></h2>
+<p>以往做游戏时接SDK的经历不堪回首，当时不知道CocoaPods的存在。漫漫血泪史，第三方工具必须提前调研。</p>
+<p>用到的SDK：</p>
+<ul>
+<li>AFNetworking</li>
+<li>SDWebImage</li>
+<li>Bmob（这个后面细说）</li>
+</ul>
+<a id="more"></a>
+<h2><span id="sketch">Sketch</span></h2>
+<p>爱不释手的矢量设计软件，制作icon全靠它了。</p>
+<h1><span id="数据">数据</span></h1>
+<h2><span id="来源">来源</span></h2>
+<p>在<a href="http://www.todayonhistory.com/" target="_blank" rel="noopener">历史上的今天</a>官网注册开发者即可得到请求权限。可以获得指定日期的历史事件列表，包含标题，简述，图片url，网页链接。每天限制请求200次，这也就产生了后面的问题。</p>
+<h2><span id="缓存策略">缓存策略</span></h2>
+<p>访问次数限制决定了我不能完全依赖历史上的今天提供的API，最简单的解决办法是转存到自己的服务器上。但是哪有免费的服务器呢？而且还要编写服务端代码，部署环境，想想就头疼，还能不能专心写app了？有第三方帮我把这些事都做了就好了，一搜之下还真的有，伟大的云服务，最终使用了<a href="http://www.bmob.cn/" target="_blank" rel="noopener">Bmob</a>，必须打广告点赞，妈妈再也不担心服务器开发了。</p>
+<p>最终策略如下:</p>
+<p><img src="app01.png" alt="enter image description here"></p>
+<h1><span id="美化">美化</span></h1>
+<h2><span id="webview注入javascript">WebView注入javaScript</span></h2>
+<p>点击详情会展开webView，但是官网的页面自带了导航栏，跟native相似，但是点击这个导航栏上的返回会跳转会官网的主页，这是我不希望出现的。如果能动态修改webView页面的代码就好了。一番查找，找到了这个方法：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span>ByEvaluatingJavaScriptFromString:(NSString *)script</span><br></pre></td></tr></table></figure>
+<p>于是就可以愉快的修改页面了:</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">- (void)webViewDidFinishLoad:(UIWebView *)webView &#123;</span><br><span class="line">    NSString *currentURL = [webView stringByEvaluatingJavaScriptFromString:@<span class="string">"document.location.href"</span>];</span><br><span class="line">    <span class="keyword">if</span> (![_curUrl isEqualToString:currentURL]) &#123;</span><br><span class="line">        _curUrl = currentURL;</span><br><span class="line">        [webView stringByEvaluatingJavaScriptFromString:</span><br><span class="line">         @<span class="string">"var script = document.createElement('script');"</span></span><br><span class="line">         <span class="string">"script.type = 'text/javascript';"</span></span><br><span class="line">         <span class="string">"script.text = \"</span><span class="keyword">function</span> getElementByClass(<span class="variable">$parent</span>,<span class="variable">$class</span>) &#123; <span class="string">"</span></span><br><span class="line"><span class="string">         "</span>var children = <span class="variable">$parent</span>.children;<span class="string">"</span></span><br><span class="line"><span class="string">         "</span><span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; children.length; i++) &#123;<span class="string">"</span></span><br><span class="line"><span class="string">         "</span><span class="keyword">if</span> (children[i].className == <span class="variable">$class</span>) &#123;<span class="string">"</span></span><br><span class="line"><span class="string">         "</span><span class="keyword">return</span> children[i];<span class="string">"</span></span><br><span class="line"><span class="string">         "</span>&#125;<span class="string">"</span></span><br><span class="line"><span class="string">         "</span>&#125;<span class="string">"</span></span><br><span class="line"><span class="string">         "</span>&#125;\<span class="string">";"</span></span><br><span class="line">         <span class="string">"document.getElementsByTagName('head')[0].appendChild(script);"</span>];</span><br><span class="line">        [webView stringByEvaluatingJavaScriptFromString:@<span class="string">"var parent=document.getElementById('main');"</span></span><br><span class="line">         <span class="string">"hide(getElementByClass(parent,'header'));"</span></span><br><span class="line">         <span class="string">"document.body.style.color='black';"</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="背景模糊">背景模糊</span></h2>
+<p>欢迎使用Pods，应有尽有：BlurryModalSegue</p>
+<p>get代码后，只需要在storyboard中选择custom，指定BlurryModalSegue即可：</p>
+<p><img src="app02.png" alt="enter image description here"></p>
+<p>看看效果吧：</p>
+<p><img src="41.png" alt="enter image description here"> <img src="42.png" alt="enter image description here"></p>
+
+
+                <hr>
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/06/17/2017-06-18-贪吃蛇io的实现要点/" data-toggle="tooltip" data-placement="top" title="贪吃蛇io的实现要点">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/08/19/2015-08-19-做一个Sublime的Hexo插件/" data-toggle="tooltip" data-placement="top" title="做一个Sublime的Hexo插件">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+            </div>
+
+            <!-- Table of Contents -->
+            
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">工具</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">StoryBoard</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">CocoaPods</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">Sketch</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">数据</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">来源</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">缓存策略</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">美化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">WebView注入javaScript</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">背景模糊</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#mobile" title="mobile">mobile</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wonderyue">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wondery 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-164338400-1';
+    var _gaDomain = 'wonderdaystudio.com/';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="on the road">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          可视化有限状态机编辑器 - 塗鴉兒童 Wondery
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2015/04/20/2015-04-20-可视化有限状态机编辑器/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../../../css/hux.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../../../css/widget.css">
+
+    <link rel="stylesheet" href="../../../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../../../css/signature.css">
+
+    <link rel="stylesheet" href="../../../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="atom.xml" title="Wondery" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/animator.png')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <!-- <div class="tags">
+                            
+                              <a class="tag" href="/tags/#game" title="game">game</a>
+                            
+                              <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                            
+                        </div> -->
+                        <h1>可视化有限状态机编辑器</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted on 2015-04-20
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wondery | 塗鴉兒童</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>用过Unity开发的工程师们一定对Mecanim的方便快捷印象深刻，用过之后再也不想回到刀耕火种的时代了。</p>
+<p>目前在做egret项目，首先就动手做了一个仿制Mecanim的FSM编辑器。工具做得越早，受益越多。</p>
+<p>仓库地址：<a href="https://github.com/wonderyue/Animator" target="_blank" rel="noopener">https://github.com/wonderyue/Animator</a></p>
+<h4><span id="简要说明">简要说明</span></h4>
+<ul>
+<li>
+<p>State：状态。成员变量中包含Transition数组。</p>
+</li>
+<li>
+<p>Transition：状态跳转。成员变量包含from（初始状态）和to（跳转状态），以及condition数组。</p>
+</li>
+<li>
+<p>Condition：跳转条件。成员变量包含Parameter，和logic（因Parameter而异，如number型逻辑包括&quot;&gt;&quot;,&quot;&lt;&quot;,&quot;=&quot;,“≠”），value（如bool型value可为true或false）</p>
+</li>
+<li>
+<p>Parameter：参数。成员变量包含类型（bool，number，trigger，complete，其中complete相当于Mecanim中的exitTime，代表跳转条件为动画播放结束）</p>
+</li>
+</ul>
+<a id="more"></a>
+<h4><span id="示例">示例</span></h4>
+<p><img src="animator01.gif" alt="enter image description here"></p>
+<p>导出json文件格式：</p>
+<p>大概就是下面这样事儿的。为了方便理解，只与编辑器有关的字段我没有给出，如果是用在动画以外的情景使用状态机，animation字段也可以忽视。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"state"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"state"</span>: <span class="string">"idle"</span>,</span><br><span class="line">            <span class="attr">"transition"</span>: [&#123;</span><br><span class="line">                <span class="attr">"condition"</span>: [&#123;</span><br><span class="line">                    <span class="attr">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                    <span class="attr">"logic"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"id"</span>: <span class="string">"run"</span>,</span><br><span class="line">                    <span class="attr">"type"</span>: <span class="number">1</span></span><br><span class="line">                &#125;],</span><br><span class="line">                <span class="attr">"nextState"</span>: <span class="string">"run"</span></span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="attr">"default"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"animation"</span>: <span class="string">"idle_animation"</span></span><br><span class="line">        &#125;, </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"state"</span>: <span class="string">"run"</span>,</span><br><span class="line">            <span class="attr">"transition"</span>: [&#123;</span><br><span class="line">                <span class="attr">"condition"</span>: [&#123;</span><br><span class="line">                    <span class="attr">"value"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"logic"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"id"</span>: <span class="string">"run"</span>,</span><br><span class="line">                    <span class="attr">"type"</span>: <span class="number">1</span></span><br><span class="line">                &#125;],</span><br><span class="line">                <span class="attr">"nextState"</span>: <span class="string">"idle"</span></span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="attr">"animation"</span>: <span class="string">"run_animation"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="动画应用">动画应用</span></h4>
+<p>下面以egret的dragonBones应用为例</p>
+<p>仓库地址：<a href="https://github.com/wonderyue/AnimatorDemo.git" target="_blank" rel="noopener">https://github.com/wonderyue/AnimatorDemo.git</a></p>
+<p>首先导出egret格式的骨骼动画</p>
+<p><img src="animator02.png" alt="enter image description here"></p>
+<p>然后将skeleton.json文件丢入Animator中，（跟open是一个效果，两种方式任君选用），刚丢进去时应该是这样事儿的</p>
+<p><img src="animator03.png" alt="enter image description here"></p>
+<p>稍微编辑一下</p>
+<p><img src="animator04.png" alt="enter image description here"></p>
+<p>最后点击save，保存下来，放到工程资源目录下。</p>
+<h4><span id="探讨">探讨</span></h4>
+<p>代码部分参考demo即可，非常简单，不过300行。只对个别部分做一些探讨：</p>
+<ol>
+<li>
+<p>文件名暂时有严格的要求。<br>
+要导入的骨骼文件必须以&quot;skeleton.json&quot;结尾，保存的输出文件必须以&quot;fsm.json&quot;结尾。这部分在编辑器的源码中可以看到，因为扩展名都是json，所以暂时对文件名有了比较严格的要求。这部分可以根据具体应用定制。</p>
+</li>
+<li>
+<p>关于业务逻辑的一些建议。<br>
+涉及到具体业务逻辑，如动作游戏的动画切换，可能会涉及到以下问题。第一种是立即切换，如anyState跳转到die，我们一般希望立即跳转。第二种是有限窗口内跳转，比如三连击时，我们不希望玩家点击三次攻击动画一瞬间播放到了第三击而前两击几乎看不到。为了兼顾上面两种情况，我们可以在跳转前加一个判断，条件可能是当前动画名称，下一个动画名称，是否循环播放以及cutTime/totalTime等几个条件的逻辑组合。</p>
+</li>
+</ol>
+
+
+                <hr>
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2015/04/22/2015-04-22-轻量级行为树编辑器/" data-toggle="tooltip" data-placement="top" title="轻量级行为树编辑器">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/04/02/2015-04-03-Whats next？/" data-toggle="tooltip" data-placement="top" title="Whats next？">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+            </div>
+
+            <!-- Table of Contents -->
+            
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">简要说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">示例</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">动画应用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">探讨</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#game" title="game">game</a>
+                        
+                          <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wonderyue">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wondery 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-164338400-1';
+    var _gaDomain = 'wonderdaystudio.com/';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

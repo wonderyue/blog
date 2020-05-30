@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="on the road">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          做一个Sublime的Hexo插件 - 塗鴉兒童 Wondery
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2015/08/19/2015-08-19-做一个Sublime的Hexo插件/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../../../css/hux.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../../../css/widget.css">
+
+    <link rel="stylesheet" href="../../../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../../../css/signature.css">
+
+    <link rel="stylesheet" href="../../../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="atom.xml" title="Wondery" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <!-- <div class="tags">
+                            
+                              <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                            
+                        </div> -->
+                        <h1>做一个Sublime的Hexo插件</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted on 2015-08-19
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wondery | 塗鴉兒童</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>是款很适合程序猿使用的博客框架，同octopress一样使用markdown编写博文，不同的是采用node.js来生成静态网页，速度更快。</p>
+<p>Markdown的编辑器也有很多，<a href="http://25.io/mou/" target="_blank" rel="noopener">Mou</a>就是一个很好的选择。还有在线编辑器，如<a href="http://www.maxiang.info/" target="_blank" rel="noopener">马克飞象</a>。当然，忽略实时预览的话，任何文本编辑器也是都可以胜任的，比如<a href="http://www.sublimetext.com/" target="_blank" rel="noopener">Sublime</a>。为了更加肆意地懒惰，决定开发一个对应Hexo的Sublime插件。</p>
+<h1><span id="sublime插件开发">Sublime插件开发</span></h1>
+<h2><span id="新建插件">新建插件</span></h2>
+<ul>
+<li>Preferences -&gt; Browse Packages… 新建目录，用来存放我们的插件，这里就叫做BlogAssistant</li>
+<li>Tools-&gt;New Plugin… 创建新的插件，命名为BlogAssistant.py保存在之前的文件夹下</li>
+<li>ctrl+`打开控制台，输入view.run_command(‘example’)，如果当前文档前插入了&quot;Hello, World!&quot;则表明创建成功</li>
+</ul>
+<a id="more"></a>
+<h2><span id="设置快捷键">设置快捷键</span></h2>
+<p>创建对应各平台的快捷键文件Default (Linux).sublime-keymap, Default (OSX).sublime-keymap, Default (Windows).sublime-keymap。内容为json格式，如下例所示：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+p"</span>], <span class="attr">"command"</span>: <span class="string">"blog_assistant_push"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+v"</span>], <span class="attr">"command"</span>: <span class="string">"blog_assistant_preview"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>其中blog_assistant_push对应BlogAssistant.py中的BlogPusherPreviewCommand</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlogPusherPreviewCommand</span>(<span class="title">sublime_plugin</span>.<span class="title">TextCommand</span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(<span class="keyword">self</span>, edit)</span></span><span class="symbol">:</span></span><br><span class="line">		...</span><br></pre></td></tr></table></figure>
+<h2><span id="配置文件">配置文件</span></h2>
+<h3><span id="创建">创建</span></h3>
+<p>新建配置文件BlogAssistant.sublime-settings，格式同样为json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"blog_path"</span>: <span class="string">"your_blog_path"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="读取">读取</span></h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadSettings</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sublime.load_settings(name+<span class="string">".sublime-settings"</span>)</span><br></pre></td></tr></table></figure>
+<h2><span id="调用shell">调用shell</span></h2>
+<p>使用命令<a href="https://docs.python.org/2/library/subprocess.html" target="_blank" rel="noopener">subprocess.Popen</a>来调用shell，比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">process = subprocess.Popen(<span class="string">"ls -l"</span>, shell=<span class="literal">True</span>, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> process.stdout.readlines():</span><br><span class="line">	<span class="keyword">print</span> line</span><br></pre></td></tr></table></figure>
+<h3><span id="发布">发布</span></h3>
+<p>看起来很简单是不是？那我们马上试试调用Hexo的deploy命令吧。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">process = subprocess.Popen(<span class="string">"hexo d"</span>, <span class="attribute">shell</span>=<span class="literal">True</span>, <span class="attribute">stdout</span>=subprocess.PIPE, <span class="attribute">stderr</span>=subprocess.STDOUT)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> process.stdout.readlines():</span><br><span class="line">	<span class="builtin-name">print</span> line</span><br></pre></td></tr></table></figure>
+<p>输出信息会告诉我们找不到hexo命令。因为脚本运行时没有得到与shell完全相同的环境变量，不要紧，有一个env参数我们还没有使用呢。env要怎么传入环境变量呢，在官方文档可以看到env={“PATH”: “/usr/bin”}这样的用法，如果要传入跟shell环境相同的PATH可以这样env=os.environ。加上env参数后马上再去试试吧，你就会发现仍然不行……</p>
+<p>which hexo看一下输出，路径为/usr/local/bin。再打印一下os.environ，居然没有/usr/local/bin，好吧，先手动加上再说。</p>
+<p>ok，hexo命令找到了，新的问题又来了，输出信息为hexo的help，告诉我们用错了指令，因为当前路径是我们的插件目录，我们还需要切换工作路径，使用cwd参数，最终代码如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">settings = helper.loadSettings(<span class="string">"BlogAssistant"</span>)</span><br><span class="line">blog_path = settings.<span class="builtin-name">get</span>(<span class="string">"blog_path"</span>, <span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">process = subprocess.Popen(<span class="string">"hexo g &amp;&amp; hexo d"</span>, <span class="attribute">cwd</span>=blog_path, <span class="attribute">shell</span>=<span class="literal">True</span>, env=&#123;<span class="string">'PATH'</span>:os.environ[<span class="string">'PATH'</span>]+<span class="string">":/usr/local/bin"</span>&#125;, <span class="attribute">stdout</span>=subprocess.PIPE, <span class="attribute">stderr</span>=subprocess.STDOUT)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> process.stdout.readlines():</span><br><span class="line">	<span class="builtin-name">print</span> line</span><br></pre></td></tr></table></figure>
+<p>因为我使用了私钥所以省去了账号和密码，同时在git目录.config文件中加入了</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[user]</span>  </span><br><span class="line"><span class="attr">name</span> = yourname  </span><br><span class="line"><span class="attr">email</span> = youremail@gmail.com</span><br></pre></td></tr></table></figure>
+<p>从而又省去了在python环境下调用&quot;git config --global&quot;的过程，懒就要懒到底。</p>
+<h3><span id="预览">预览</span></h3>
+<p>预览功能要比发布功能麻烦一些。</p>
+<ul>
+<li>问题一：hexo server是通过node.js建立webserver的，进程需要手动结束。</li>
+</ul>
+<p>在终端中我们可以ctrl+c来退出。因此，如果我们要做预览功能，同时还要做关闭server的功能。</p>
+<ul>
+<li>问题二：端口可能已经被占用。</li>
+</ul>
+<p>需要判断占用端口的进程是否是我们通过本插件建立的，如果是则跳过，否则先kill掉进程再调用hexo server。</p>
+<p>方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kill</span><span class="params">(pid)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a = os.kill(pid, signal.SIGKILL)</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'pid:%s killed, result:%s'</span> % (pid, a)</span><br><span class="line">    <span class="keyword">except</span> OSError, e:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'pid not exists'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">try_kill_process</span><span class="params">()</span>:</span></span><br><span class="line">        p = subprocess.Popen(<span class="string">"lsof -a -c node -i:4000 -Fp"</span>, shell=<span class="literal">True</span>, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)</span><br><span class="line">        <span class="keyword">for</span> pid <span class="keyword">in</span> p.stdout.readlines():</span><br><span class="line">		    helper.kill(string.atoi(pid[<span class="number">1</span>:]))</span><br></pre></td></tr></table></figure>
+<p>这样我们就先解决了问题二，给这个kill方法加个快捷键，我们就解决了问题一。</p>
+<p>下面直接给出最终的预览功能代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlogAssistantPreviewCommand</span><span class="params">(sublime_plugin.TextCommand)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, edit)</span>:</span></span><br><span class="line">		try_kill_process()</span><br><span class="line">		settings = helper.loadSettings(<span class="string">"BlogAssistant"</span>)</span><br><span class="line">		blog_path = settings.get(<span class="string">"blog_path"</span>, <span class="string">""</span>)</span><br><span class="line">		process = subprocess.Popen(<span class="string">"hexo g"</span>, cwd=blog_path, shell=<span class="literal">True</span>, env=&#123;<span class="string">'PATH'</span>:os.environ[<span class="string">'PATH'</span>]+<span class="string">":/usr/local/bin"</span>&#125;)</span><br><span class="line">		process.wait()</span><br><span class="line">		subprocess.Popen(<span class="string">"hexo s"</span>, cwd=blog_path, shell=<span class="literal">True</span>, env=&#123;<span class="string">'PATH'</span>:os.environ[<span class="string">'PATH'</span>]+<span class="string">":/usr/local/bin"</span>&#125;)</span><br><span class="line">		time.sleep(<span class="number">1</span>)</span><br><span class="line">		webbrowser.open(<span class="string">"http://localhost:4000/"</span>)</span><br></pre></td></tr></table></figure>
+<p>解释一下webbrowser.open会调用默认浏览器打开页面，从体验上讲，我们希望打开页面时，hexo已经生成了静态网页，所以在hexo generate后加了wait命令，用来阻塞进程。之后调用hexo server，我们希望打开网页时webserver已经建立好了，这时就不能用wait了，记得我们在终端下执行hexo server的情景吗？除非手动退出，否则进程不会终止，如果在这里wait，sublime会死掉，所以改为sleep，延时多久自行尝试吧，可以是小数。</p>
+<h2><span id="结语">结语</span></h2>
+<p>至此，预览和发布这两个常用功能就开发完了，后续想到什么其他功能在继续补充吧。暂时还没有发布到sublime官方的Package Control上的想法，预览功能从产品角度讲存在很多问题，发布功能缺少反馈，而且插件没有在其他平台测试过。因此，真的觉得有用的话，自己把代码copy走吧。</p>
+<p>另外，这篇博客就是用插件发布的哟。</p>
+<h2><span id="参考">参考</span></h2>
+<p><a href="http://code.tutsplus.com/tutorials/how-to-create-a-sublime-text-2-plugin--net-22685" target="_blank" rel="noopener">How to Create a Sublime Text 2 Plugin</a></p>
+
+
+                <hr>
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2015/09/02/2015-09-02-做一个简单的iOS应用/" data-toggle="tooltip" data-placement="top" title="做一个简单的iOS应用">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/05/07/2015-05-07-动作游戏架构设计/" data-toggle="tooltip" data-placement="top" title="动作游戏架构设计">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+            </div>
+
+            <!-- Table of Contents -->
+            
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">Sublime插件开发</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">新建插件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">设置快捷键</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">配置文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">创建</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">读取</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">调用shell</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">发布</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">预览</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">结语</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">参考</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wonderyue">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wondery 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-164338400-1';
+    var _gaDomain = 'wonderdaystudio.com/';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

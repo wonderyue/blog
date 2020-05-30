@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="on the road">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          贪吃蛇io的实现要点 - 塗鴉兒童 Wondery
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2017/06/17/2017-06-18-贪吃蛇io的实现要点/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../../../css/hux.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../../../css/widget.css">
+
+    <link rel="stylesheet" href="../../../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../../../css/signature.css">
+
+    <link rel="stylesheet" href="../../../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="atom.xml" title="Wondery" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/slither.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <!-- <div class="tags">
+                            
+                              <a class="tag" href="/tags/#game" title="game">game</a>
+                            
+                        </div> -->
+                        <h1>贪吃蛇io的实现要点</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted on 2017-06-17
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wondery | 塗鴉兒童</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2><span id="总体架构">总体架构</span></h2>
+<p>逻辑与渲染分离。如有需要，逻辑层可被客户端和服务器公用。</p>
+<h2><span id="移动与更新">移动与更新</span></h2>
+<p>slither.io与8bit贪吃蛇不同，它的移动是像素级的，而不是一个格子一个格子移动的。</p>
+<p>但是如果考虑绘制时，采用的是如下方法来决定身体的节数，就会发生身体的拐点处鳞片跳变（浮点数及精度原因），以及转弯不平滑的问题。</p>
+<blockquote>
+<p>身体长度 / 鳞片间距 = 鳞片数量</p>
+</blockquote>
+<p>最终参考了贪吃蛇大作战的方法，蛇的最小移动速度就是鳞片的间距，具体实现如下：</p>
+<h3><span id="逻辑层">逻辑层</span></h3>
+<p>蛇与位置相关的逻辑数据只有拐点列表，它记录了蛇的头尾和每一个拐点，使蛇身由一条条线段连接而成。</p>
+<p>移动时，头拐点按照蛇头朝向移动一段距离，同时尾拐点缩短同样距离，如果最后一段长度不足移动距离则继续向上查找。如此更新拐点列表。</p>
+<a id="more"></a>
+<h3><span id="渲染层">渲染层</span></h3>
+<p>蛇身由若干圆片组成，蛇的长度发生变化是会增删圆片，宽度变化时会改变渲染尺寸。<br>
+移动时，逻辑帧的每帧蛇移动的距离是圆片间的间距，所以将最后一个圆片移至蛇头即可。</p>
+<p>渲染帧是高于逻辑帧的，渲染帧更新时，每个圆片以前一个圆片为目标做插值移动，这样效果会比较平滑。</p>
+<h2><span id="碰撞检测">碰撞检测</span></h2>
+<h3><span id="头部与身体碰撞">头部与身体碰撞</span></h3>
+<h4><span id="抽象碰撞模型">抽象碰撞模型</span></h4>
+<ol>
+<li>头部-&gt;点，身体-&gt;OBB（叉乘*4）</li>
+<li>头部-&gt;线段，身体-&gt;线段（叉乘*2）</li>
+<li>头部-&gt;圆，身体-&gt;线段</li>
+<li>头部-&gt;圆，身体-&gt;OBB</li>
+</ol>
+<h4><span id="算法优化">算法优化</span></h4>
+<ol>
+<li>
+<p>四叉树</p>
+<ul>
+<li>结点存储的是蛇身体各段的OBB</li>
+<li>四叉树需要不停的维护，如果量级不大，可能反而浪费时间和空间</li>
+</ul>
+</li>
+<li>
+<p>包围盒</p>
+</li>
+</ol>
+<div id="flowchart-0" class="flow-chart"></div>
+<h4><span id="运算操作优化">运算操作优化</span></h4>
+<ul>
+<li>避免sqrt，直接使用平方值比较</li>
+<li>避免三角函数和除法，使用向量运算</li>
+</ul>
+<p>实际开发选择了 4.头部-&gt;圆，身体-&gt;OBB 及 2.包围盒。效率没有任何问题，也就没有再进一步优化。</p>
+<h3><span id="蛇与食物碰撞">蛇与食物碰撞</span></h3>
+<h4><span id="抽象碰撞模型">抽象碰撞模型</span></h4>
+<ul>
+<li>头部-&gt;圆，食物-&gt;圆（其中一个换成点可能也没问题）</li>
+</ul>
+<h4><span id="算法优化">算法优化</span></h4>
+<ol>
+<li>四叉树</li>
+<li>平均分片</li>
+</ol>
+<p>实际采用了 2.平均分片，效率就已经足够高了。</p>
+<h2><span id="同步">同步</span></h2>
+<ul>
+<li>
+<p>采用帧同步，需要同步的只有蛇的创建和玩家的操作。所有的碰撞检测，及蛇的分数，长度变化等计算全都放到客户端。</p>
+</li>
+<li>
+<p>游戏开始时会服务端决定随机种子，同步给各客户端。足以保证所有的随机结果是一致的（食物的随机产生，蛇的随机位置和朝向）。</p>
+</li>
+<li>
+<p>碰撞的结果也是各自计算，结果完全相同。（吃食物，蛇的死亡）</p>
+</li>
+<li>
+<p>蛇的死亡是需要通知服务器。</p>
+</li>
+<li>
+<p>服务器可以通过多数玩家的上报结果来简单甄别有无作弊现象。</p>
+</li>
+<li>
+<p>支持中途加入，加入时间越晚，需要从头计算的数据越多，即便服务器已经过滤掉已死亡的玩家数据。这部分计算只能放到loading中，否则极其影响体验。</p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">op1=>operation: 与蛇整体AABB碰撞检测
+op2=>operation: 与身体各段AABB碰撞检测
+op3=>operation: OBB等精确碰撞检测
+
+op1->op2->op3</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></li>
+</ul>
+
+
+                <hr>
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/07/02/2017-07-02-弹珠台抽奖机的实现/" data-toggle="tooltip" data-placement="top" title="弹珠台抽奖机的实现">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/09/02/2015-09-02-做一个简单的iOS应用/" data-toggle="tooltip" data-placement="top" title="做一个简单的iOS应用">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+            </div>
+
+            <!-- Table of Contents -->
+            
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">总体架构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">移动与更新</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">逻辑层</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">渲染层</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">碰撞检测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">头部与身体碰撞</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">抽象碰撞模型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">算法优化</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">运算操作优化</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">蛇与食物碰撞</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">抽象碰撞模型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">算法优化</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">同步</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#game" title="game">game</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wonderyue">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wondery 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-164338400-1';
+    var _gaDomain = 'wonderdaystudio.com/';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

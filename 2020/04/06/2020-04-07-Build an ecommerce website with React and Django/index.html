@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="on the road">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Build an ecommerce website with React and Django (1) - 塗鴉兒童 Wondery
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2020/04/06/2020-04-07-Build an ecommerce website with React and Django/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../../../css/hux.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../../../css/widget.css">
+
+    <link rel="stylesheet" href="../../../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../../../css/signature.css">
+
+    <link rel="stylesheet" href="../../../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="atom.xml" title="Wondery" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <!-- <div class="tags">
+                            
+                              <a class="tag" href="/tags/#react" title="react">react</a>
+                            
+                              <a class="tag" href="/tags/#django" title="django">django</a>
+                            
+                        </div> -->
+                        <h1>Build an ecommerce website with React and Django (1)</h1>
+                        <h2 class="subheading">Things I should know earlier</h2>
+                        <span class="meta">
+                            Posted on 2020-04-06
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wondery | 塗鴉兒童</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>I start learning full-stack development by building an eCommerce website with React and Django.</p>
+<p><a href="https://github.com/wonderyue/Autocart" target="_blank" rel="noopener">Project Repository</a></p>
+<p><a href="https://autocart.rj.r.appspot.com/" target="_blank" rel="noopener">Demo</a></p>
+<p>Features:</p>
+<ul>
+<li>authentication</li>
+<li>product list</li>
+<li>cart</li>
+<li>order history</li>
+<li>rating and comment</li>
+<li>edit mode for administrator</li>
+</ul>
+<p>This is the first one of a serial of articles, and I’d like to talk about things I should know earlier.</p>
+<h2><span id="packageslifesavers-i-should-know-earlier">Packages(Lifesavers) I should know earlier</span></h2>
+<h3><span id="1-react-moment">1. react-moment</span></h3>
+<!-- [react-moment](https://www.npmjs.com/package/react-moment) -->
+<p>I use DateTimeField in Django model, and it saved as a string like “2020-04-11T18:36:05.748Z” in database. It is hard to display it in the frontend. I add another read-only field when serializing the model, convert the DateTimeField value to timestamp. And create a Date object in the frontend. Then, I find this package, and revert what I have done…</p>
+<p>And it is also useful when you need to display “post a minute/two days ago” in a comment or feed component.</p>
+<a id="more"></a>
+<h3><span id="2-react-responsive-carousel">2. react-responsive-carousel</span></h3>
+<!-- [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel) -->
+<p>I use semantic-ui as style framework, sadly there is no carousel component. There is an official <a href="https://github.com/express-labs/pure-react-carousel" target="_blank" rel="noopener">solution</a>, but that’s not what I want. I tried to modify it, cost me a lot of time. Make me wondering what am I doing, why not give me a simple and elegant component like <a href="https://getbootstrap.com/docs/4.0/components/carousel/" target="_blank" rel="noopener">bootstrap</a> does. Finally, I find <a href="https://www.npmjs.com/package/react-responsive-carousel" target="_blank" rel="noopener">react-responsive-carousel</a>. Nice component, especially the thumbnails, awesome.</p>
+<p><img src="carousel.png" alt="carousel"></p>
+<h3><span id="3-babel-plugin-root-import">3. babel-plugin-root-import</span></h3>
+<!-- [babel-plugin-root-import](https://www.npmjs.com/package/babel-plugin-root-import) -->
+<blockquote>
+<p>import xxxx from ‘…/…/…/xx/xxx’;</p>
+</blockquote>
+<p>If you don’t like to write something like the above, you should install this package.</p>
+<h3><span id="4-immutability-helper">4. immutability-helper</span></h3>
+<!-- [immutability-helper](https://github.com/kolodny/immutability-helper) -->
+<p>If you need to update a flat state, you can simply set value. But if a state contains arrays or key-value objects, you should use immutability-helper. Its syntax is like mongoDB update. If you don’t know why you need immutability-helper, you should read <a href="https://reactjs.org/docs/optimizing-performance.html#using-immutable-data-structures" target="_blank" rel="noopener">this</a>.</p>
+<h3><span id="5-react-currency-format">5. react-currency-format</span></h3>
+<!-- [react-currency-format](https://www.npmjs.com/package/react-currency-format) -->
+<blockquote>
+<p>$100,000</p>
+</blockquote>
+<p>Save your time on this.</p>
+<h2><span id="tipstricks-i-should-know-earlier">Tips(Tricks) I should know earlier</span></h2>
+<h3><span id="1-reusable-actionreducer-for-redux">1. reusable action/reducer for redux</span></h3>
+<p>I first developed product list, then shopping cart. They don’t share anything common. Product list needs to fetch a list of data with parameters of pageNumber, orderBy, and filters. Shopping cart has simple CRUD apis. Later I worked on order list, which has pagination and CRUD. When I copy, paste, and modify similar codes, I start thinking about what am I doing. I am a programmer(lazy), I should be clever(lazier). Let’s refactor.</p>
+<p>Inspired by <a href="https://medium.com/xandr-tech/five-tips-for-working-with-redux-in-large-applications-89452af4fdcb" target="_blank" rel="noopener">Five Tips for Working with Redux in Large Applications</a>.</p>
+<figure class="highlight js"><figcaption><span>PaginationAction</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PaginationAction = <span class="function">(<span class="params">prefix, url</span>) =&gt;</span> (&#123;</span><br><span class="line">  changeParam: <span class="function">(<span class="params">type, value</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      type: addPrefix(prefix, type),</span><br><span class="line">      payload: value,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  getOnePage: <span class="function">(<span class="params">countPerPage, curPage, filters = &#123;&#125;</span>) =&gt;</span> <span class="function">(<span class="params">dispatch, getState</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> offset = countPerPage * (curPage - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">const</span> request = withToken ? clientRequestWithToken : clientRequest;</span><br><span class="line">    <span class="keyword">let</span> param = <span class="string">""</span>;</span><br><span class="line">    <span class="built_in">Object</span>.keys(filters).map(<span class="function">(<span class="params">key, index</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (filters[key] != <span class="literal">undefined</span>) param += <span class="string">`&amp;<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;filters[key]&#125;</span>`</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> request(&#123;</span><br><span class="line">      method: <span class="string">"get"</span>,</span><br><span class="line">      url: url + <span class="string">"?limit="</span> + countPerPage + <span class="string">"&amp;offset="</span> + offset + param,</span><br><span class="line">    &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">      dispatch(&#123;</span><br><span class="line">        type: addPrefix(prefix, GET_ONE_PAGE),</span><br><span class="line">        payload: res,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> PaginationAction;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>PaginationReducer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> TYPE_2_PROP = &#123;</span><br><span class="line">  [CHANGE_PAGE]: <span class="string">"curPage"</span>,</span><br><span class="line">  [CHANGE_COUNT_PER_PAGE]: <span class="string">"countPerPage"</span>,</span><br><span class="line">  [CHANGE_ORDER]: <span class="string">"ordering"</span>,</span><br><span class="line">  [CHANGE_BRAND]: <span class="string">"brand"</span>,</span><br><span class="line">  [CHANGE_CATEGORY]: <span class="string">"category"</span>,</span><br><span class="line">  [CHANGE_SEARCH]: <span class="string">"search"</span>,</span><br><span class="line">  [CHANGE_MIN_PRICE]: <span class="string">"price__gte"</span>,</span><br><span class="line">  [CHANGE_MAX_PRICE]: <span class="string">"price__lte"</span>,</span><br><span class="line">  [CHANGE_ENABLE]: <span class="string">"enable"</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> defaultInitState = &#123;</span><br><span class="line">  count: <span class="number">0</span>,</span><br><span class="line">  list: [],</span><br><span class="line">  curPage: <span class="number">1</span>,</span><br><span class="line">  countPerPage: <span class="number">10</span>,</span><br><span class="line">  filters: &#123;&#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PaginationReducer = <span class="function">(<span class="params">prefix, initState = defaultInitState</span>) =&gt;</span> (</span><br><span class="line">  state = initState,</span><br><span class="line">  action</span><br><span class="line">) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> type = trimPrefix(prefix, action.type);</span><br><span class="line">  <span class="keyword">if</span> (type == GET_ONE_PAGE) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...state,</span><br><span class="line">      count: action.payload.count,</span><br><span class="line">      list: action.payload.results,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (type == CHANGE_PAGE || type == CHANGE_COUNT_PER_PAGE) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...state,</span><br><span class="line">      [TYPE_2_PROP[type]]: action.payload,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (TYPE_2_PROP[type]) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...state,</span><br><span class="line">      filters: &#123;</span><br><span class="line">        ...state.filters,</span><br><span class="line">        [TYPE_2_PROP[type]]: action.payload,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> PaginationReducer;</span><br></pre></td></tr></table></figure>
+<p>how to use:</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//create</span></span><br><span class="line">export const OrderListAction = PaginationAction(<span class="string">"OrderList"</span>, ORDER_URL);</span><br><span class="line"></span><br><span class="line"><span class="comment">//connect</span></span><br><span class="line">export default connect(mapStateToProps, &#123;</span><br><span class="line"><span class="symbol">  getOnePage:</span> OederListAction.getOnePage,</span><br><span class="line"><span class="symbol">  changeParam:</span> OrderListAction.changeParam,</span><br><span class="line">&#125;)(ACOrderHistoryView);</span><br><span class="line"></span><br><span class="line"><span class="comment">//combineReducer</span></span><br><span class="line"><span class="symbol">OrderList:</span> Pagination(<span class="string">"OrderList"</span>, &#123;</span><br><span class="line"><span class="symbol">  count:</span> <span class="number">0</span>,</span><br><span class="line"><span class="symbol">  list:</span> [],</span><br><span class="line"><span class="symbol">  curPage:</span> <span class="number">1</span>,</span><br><span class="line"><span class="symbol">  countPerPage:</span> <span class="number">10</span>,</span><br><span class="line"><span class="symbol">  filters:</span> &#123;</span><br><span class="line"><span class="symbol">    ordering:</span> <span class="string">"-createTime"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
+<p>You can create a CRUD action in the same way.</p>
+<figure class="highlight js"><figcaption><span>ModelAction</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ModelAction = <span class="function">(<span class="params">prefix, url</span>) =&gt;</span> (&#123;</span><br><span class="line">  list: <span class="function"><span class="params">()</span> =&gt;</span> &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  create: <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;...&#125;</span><br><span class="line">    </span><br><span class="line">  retrieve: <span class="function">(<span class="params">id</span>) =&gt;</span> &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  update: <span class="function">(<span class="params">id, obj</span>) =&gt;</span> &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">delete</span>: <span class="function">(<span class="params">id</span>) =&gt;</span> &#123;...&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3><span id="2-static-assets-management">2. static assets management</span></h3>
+<p>At first, I use webpack to control output directory. It’s not hard, but favicon is a trouble, you need another plugin to handle it. For example, I use copy-webpack-plugin.</p>
+<p>Later, I need an upload images function. I found Django has ImageField which is not compatible with the solution I used before. And I have to say, Django’s <a href="https://docs.djangoproject.com/en/3.0/ref/settings/#std:setting-MEDIA_ROOT" target="_blank" rel="noopener">MEDIA_ROOT</a> is much easier.</p>
+
+
+                <hr>
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2020/01/21/2020-01-21-我的妈妈/" data-toggle="tooltip" data-placement="top" title="我的妈妈">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+            </div>
+
+            <!-- Table of Contents -->
+            
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">Packages(Lifesavers) I should know earlier</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">1. react-moment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">2. react-responsive-carousel</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">3. babel-plugin-root-import</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">4. immutability-helper</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">5. react-currency-format</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">Tips(Tricks) I should know earlier</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">1. reusable action/reducer for redux</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">2. static assets management</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#react" title="react">react</a>
+                        
+                          <a class="tag" href="/tags/#django" title="django">django</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wonderyue">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wondery 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-164338400-1';
+    var _gaDomain = 'wonderdaystudio.com/';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

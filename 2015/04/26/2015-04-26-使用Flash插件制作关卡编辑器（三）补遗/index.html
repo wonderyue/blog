@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="on the road">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          使用Flash制作关卡编辑器(3) - 塗鴉兒童 Wondery
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2015/04/26/2015-04-26-使用Flash插件制作关卡编辑器（三）补遗/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../../../css/hux.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../../../css/widget.css">
+
+    <link rel="stylesheet" href="../../../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../../../css/signature.css">
+
+    <link rel="stylesheet" href="../../../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="atom.xml" title="Wondery" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <!-- <div class="tags">
+                            
+                              <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                            
+                        </div> -->
+                        <h1>使用Flash制作关卡编辑器(3)</h1>
+                        <h2 class="subheading">补遗</h2>
+                        <span class="meta">
+                            Posted on 2015-04-26
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wondery | 塗鴉兒童</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2><span id="flash控件使用">Flash控件使用</span></h2>
+<p>下面是我使用到的控件，可以参考一下：</p>
+<p><img src="stage03.png" alt="控件参考"></p>
+<h3><span id="datagrid的使用">DataGrid的使用</span></h3>
+<p>1 设置表头</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dataGrid.columns</span> = [<span class="string">"id"</span>, <span class="string">"level"</span>, <span class="string">"count"</span>, <span class="string">"phase"</span>, <span class="string">"wave"</span>, <span class="string">"behavior"</span>, <span class="string">"x"</span>]<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>2 填充数据</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var dp:DataProvider = <span class="keyword">new</span> <span class="constructor">DataProvider()</span>;</span><br><span class="line">dp.add<span class="constructor">Item(&#123;<span class="params">id</span>:<span class="params">obj</span>[<span class="string">"id"</span>],<span class="params">level</span>:<span class="params">obj</span>[<span class="string">"level"</span>],<span class="params">count</span>:<span class="params">obj</span>[<span class="string">"count"</span>]<span class="operator">||</span>1,<span class="params">phase</span>:<span class="params">obj</span>[<span class="string">"phase"</span>],<span class="params">wave</span>:<span class="params">obj</span>[<span class="string">"wave"</span>]<span class="operator">||</span>1,<span class="params">behavior</span>:<span class="params">obj</span>[<span class="string">"behavior"</span>]<span class="operator">||</span>1,<span class="params">x</span>:<span class="params">obj</span>[<span class="string">"x"</span>],<span class="params">y</span>:<span class="params">obj</span>[<span class="string">"y"</span>],<span class="params">depth</span>:<span class="params">obj</span>[<span class="string">"depth"</span>]&#125;;)</span>;</span><br><span class="line">dataGrid.dataProvider = dp;</span><br></pre></td></tr></table></figure>
+<p>填入columns中不存在的key-value是不会显示的。</p>
+<a id="more"></a>
+<p>3 样式修改</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.<span class="keyword">list</span>.setStyle(<span class="string">"cellRenderer"</span>,MyCellStyle);</span><br><span class="line"><span class="built_in">window</span>.<span class="keyword">list</span>.setStyle(<span class="string">"headerRenderer"</span>, MyHeaderStyle);</span><br></pre></td></tr></table></figure>
+<p>需要新建自定义样式文件:</p>
+<figure class="highlight actionscript"><figcaption><span>MyHeaderStyle.as</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">package</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="meta"><span class="meta-keyword">import</span> flash.text.TextFormat;</span></span><br><span class="line">	<span class="meta"><span class="meta-keyword">import</span> flash.text.TextFormatAlign;</span></span><br><span class="line">	</span><br><span class="line">	<span class="meta"><span class="meta-keyword">import</span> fl.controls.dataGridClasses.HeaderRenderer;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyHeaderStyle</span> <span class="keyword">extends</span> <span class="title">HeaderRenderer</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">MyHeaderStyle</span><span class="params">()</span>:void </span>&#123;</span><br><span class="line">			<span class="keyword">super</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">override</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">drawBackground</span><span class="params">()</span>:void </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> format:TextFormat = <span class="keyword">new</span> TextFormat();</span><br><span class="line">			format.font = <span class="string">"Arial"</span>;</span><br><span class="line">			format.size = <span class="number">25</span>;</span><br><span class="line">			format.color = <span class="number">0x000000</span>;</span><br><span class="line">			format.align = TextFormatAlign.CENTER;</span><br><span class="line">			setStyle(<span class="string">"textFormat"</span>,format);</span><br><span class="line">			<span class="keyword">super</span>.drawBackground();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><figcaption><span>MyCellStyle.as</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">package</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="meta"><span class="meta-keyword">import</span> flash.text.TextFormat;</span></span><br><span class="line">	<span class="meta"><span class="meta-keyword">import</span> flash.text.TextFormatAlign;</span></span><br><span class="line">	</span><br><span class="line">	<span class="meta"><span class="meta-keyword">import</span> fl.controls.listClasses.CellRenderer;</span></span><br><span class="line">	<span class="meta"><span class="meta-keyword">import</span> fl.controls.listClasses.ICellRenderer;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCellStyle</span> <span class="keyword">extends</span> <span class="title">CellRenderer</span> <span class="keyword">implements</span> <span class="title">ICellRenderer</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">MyCellStyle</span><span class="params">()</span>:void </span>&#123;</span><br><span class="line">			<span class="keyword">super</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">override</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">drawBackground</span><span class="params">()</span>:void </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> format:TextFormat = <span class="keyword">new</span> TextFormat();</span><br><span class="line">			format.color=<span class="number">0x000000</span>;</span><br><span class="line">			format.size=<span class="number">25</span>;</span><br><span class="line">			format.font=<span class="string">"Arial"</span>;</span><br><span class="line">			format.align = TextFormatAlign.CENTER;</span><br><span class="line">			setStyle(<span class="string">"textFormat"</span>,format);</span><br><span class="line">			<span class="keyword">super</span>.drawBackground();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="编辑快捷键">编辑快捷键</span></h2>
+<p>编辑&gt;快捷键&gt;窗口&gt;其他面板，找到自己的插件面板设置快捷键即可。</p>
+<h2><span id="调试技巧">调试技巧</span></h2>
+<p>如果每次修改jsfl或AS3都需要重新打包安装，那真是太反人类了。</p>
+<p>我们可以找到插件的安装目录，比如我的在这里：</p>
+<p>C:\Users\Administrator\AppData\Local\Adobe\Flash CS6\zh_CN\Configuration\WindowSWF</p>
+<p>然后覆盖文件，重新打开面板即可。</p>
+
+
+                <hr>
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2015/05/07/2015-05-07-动作游戏架构设计/" data-toggle="tooltip" data-placement="top" title="动作游戏架构设计">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/04/26/2015-04-26-使用Flash插件制作关卡编辑器（二）通信与IO/" data-toggle="tooltip" data-placement="top" title="使用Flash制作关卡编辑器(2)">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+            </div>
+
+            <!-- Table of Contents -->
+            
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">Flash控件使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">DataGrid的使用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">编辑快捷键</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-text">调试技巧</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wonderyue">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wondery 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-164338400-1';
+    var _gaDomain = 'wonderdaystudio.com/';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>
