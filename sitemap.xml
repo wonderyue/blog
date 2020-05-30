@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>http://yoursite-url/post-sitemap.xml</loc>
+        <loc>http://wonderdaystudio.com/post-sitemap.xml</loc>
         <lastmod>2020-05-30T00:43:24.745Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite-url/page-sitemap.xml</loc>
+        <loc>http://wonderdaystudio.com/page-sitemap.xml</loc>
         <lastmod>2020-05-30T03:22:39.219Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite-url/category-sitemap.xml</loc>
+        <loc>http://wonderdaystudio.com/category-sitemap.xml</loc>
         <lastmod>2020-05-30T00:43:24.745Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite-url/tag-sitemap.xml</loc>
+        <loc>http://wonderdaystudio.com/tag-sitemap.xml</loc>
         <lastmod>2020-05-30T00:43:24.745Z</lastmod>
     </sitemap>
 
