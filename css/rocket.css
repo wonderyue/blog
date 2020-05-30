@@ -33,6 +33,14 @@
 }
 /*#rocket:hover {
   background-position: 50% -44px; }*/
+@media screen and (max-width: 1100px) {
+  #rocket {
+    display: none;
+  }
+  #rocket.show {
+    display: none;
+  }
+}
 #rocket:hover i {
   background-position: 50% 100%;
   -webkit-animation: flaming 0.7s infinite;
