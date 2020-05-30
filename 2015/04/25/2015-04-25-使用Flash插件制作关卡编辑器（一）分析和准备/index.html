@@ -152,12 +152,12 @@
                     
 
                         
+                    
+
+                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
-                    
-
                         
                     
                     
@@ -210,7 +210,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h3><span id="功能描述">功能描述</span></h3><ul>
+                <h3><span id="功能描述">功能描述</span></h3>
+<ul>
 <li>在Flash CS中通过元件拖拽完成场景中背景，装饰物，主角，敌人等元素的布置</li>
 <li>通过jsfl完成元件信息解析，并传递给AS做进一步处理（关键）</li>
 <li>使用AS3编写插件面板，展示jsfl传来的信息，并通过表单，输入框等进行进一步编辑</li>
@@ -220,15 +221,22 @@
 <p><img src="stage01.png" alt="布置场景"></p>
 <p>插件面板：</p>
 <p><img src="stage02.png" alt="插件面板"></p>
-<h3><span id="jsfl准备">jsfl准备</span></h3><p>jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操作，如批量命名，修改元件属性等。</p>
+<h3><span id="jsfl准备">jsfl准备</span></h3>
+<p>jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操作，如批量命名，修改元件属性等。</p>
 <p>jsfl用很多实用的方法，可参见<a href="http://help.adobe.com/zh_CN/flash/cs/extend/flash_cs5_extending.pdf" target="_blank" rel="noopener">官方文档</a>。这里只介绍我们需要用到的方法。</p>
 <a id="more"></a>
-<h5><span id="1-遍历库元件">1. 遍历库元件</span></h5><p>获取所有库元件：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> itemArray = fl.getDocumentDOM().<span class="keyword">library</span>.items</span><br></pre></td></tr></table></figure></p>
-<p>会得到一个数组，我们可以通过元件名或链接名或类型来获取自己想要的元件：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linkageClassName = itemArray[i].linkageClassName;   <span class="comment">//链接名</span></span><br><span class="line"><span class="keyword">var</span> itemName = itemArray[i].<span class="keyword">name</span>;                       <span class="comment">//元件名</span></span><br><span class="line"><span class="keyword">var</span> itemType= itemArray[i].itemType;                    <span class="comment">//类型</span></span><br></pre></td></tr></table></figure></p>
-<p>有时我们会有选中某个元件的需求，可以这样：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">fl</span><span class="selector-class">.getDocumentDOM</span>()<span class="selector-class">.library</span><span class="selector-class">.selectItem</span>(<span class="selector-tag">itemName</span>);</span><br></pre></td></tr></table></figure></p>
+<h5><span id="1-遍历库元件">1. 遍历库元件</span></h5>
+<p>获取所有库元件：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> itemArray = fl.getDocumentDOM().<span class="keyword">library</span>.items</span><br></pre></td></tr></table></figure>
+<p>会得到一个数组，我们可以通过元件名或链接名或类型来获取自己想要的元件：</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linkageClassName = itemArray[i].linkageClassName;   <span class="comment">//链接名</span></span><br><span class="line"><span class="keyword">var</span> itemName = itemArray[i].<span class="keyword">name</span>;                       <span class="comment">//元件名</span></span><br><span class="line"><span class="keyword">var</span> itemType= itemArray[i].itemType;                    <span class="comment">//类型</span></span><br></pre></td></tr></table></figure>
+<p>有时我们会有选中某个元件的需求，可以这样：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">fl</span><span class="selector-class">.getDocumentDOM</span>()<span class="selector-class">.library</span><span class="selector-class">.selectItem</span>(<span class="selector-tag">itemName</span>);</span><br></pre></td></tr></table></figure>
 <p>目前我们已经可以获取元件了，而我们编辑的场景也是一个元件。至此，我们可以进行下一步了，就是遍历该场景中的元素。</p>
-<h5><span id="2-遍历场景中元素">2. 遍历场景中元素</span></h5><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for <span class="params">(var <span class="attr">k</span> = item.timeline.layers.length - 1; k &gt;= 0; k--)</span> &#123; <span class="string">//</span>遍历图层,item即为场景元件</span><br><span class="line">    for <span class="params">(var n in item.timeline.layers[k].frames)</span> &#123; <span class="string">//</span>遍历所有帧  </span><br><span class="line">        for <span class="params">(var m in item.timeline.layers[k].frames[n].elements)</span> &#123; <span class="string">//</span>遍历所有帧里的可视元素  </span><br><span class="line">            var element = item.timeline.layers[k]<span class="string">.frames</span>[n]<span class="string">.elements</span>[m]</span><br><span class="line">            <span class="keyword">if</span> <span class="params">(!element.libraryItem)</span> &#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            var elementName = element.libraryItem.name</span><br><span class="line">            <span class="string">//</span>按照元件名做不同处理,可获取的信息参考</span><br><span class="line">            <span class="string">//</span>&#123;<span class="string">"name"</span>: element.libraryItem.name,</span><br><span class="line">            <span class="string">//</span> <span class="string">"x"</span>: element.x,</span><br><span class="line">            <span class="string">//</span> <span class="string">"y"</span>: element.y,</span><br><span class="line">            <span class="string">//</span> <span class="string">"depth"</span>: element.depth&#125;</span><br><span class="line">            <span class="string">...</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="自定义面板">自定义面板</span></h3><ul>
+<h5><span id="2-遍历场景中元素">2. 遍历场景中元素</span></h5>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for <span class="params">(var <span class="attr">k</span> = item.timeline.layers.length - 1; k &gt;= 0; k--)</span> &#123; <span class="string">//</span>遍历图层,item即为场景元件</span><br><span class="line">    for <span class="params">(var n in item.timeline.layers[k].frames)</span> &#123; <span class="string">//</span>遍历所有帧  </span><br><span class="line">        for <span class="params">(var m in item.timeline.layers[k].frames[n].elements)</span> &#123; <span class="string">//</span>遍历所有帧里的可视元素  </span><br><span class="line">            var element = item.timeline.layers[k]<span class="string">.frames</span>[n]<span class="string">.elements</span>[m]</span><br><span class="line">            <span class="keyword">if</span> <span class="params">(!element.libraryItem)</span> &#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            var elementName = element.libraryItem.name</span><br><span class="line">            <span class="string">//</span>按照元件名做不同处理,可获取的信息参考</span><br><span class="line">            <span class="string">//</span>&#123;<span class="string">"name"</span>: element.libraryItem.name,</span><br><span class="line">            <span class="string">//</span> <span class="string">"x"</span>: element.x,</span><br><span class="line">            <span class="string">//</span> <span class="string">"y"</span>: element.y,</span><br><span class="line">            <span class="string">//</span> <span class="string">"depth"</span>: element.depth&#125;</span><br><span class="line">            <span class="string">...</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="自定义面板">自定义面板</span></h3>
+<ul>
 <li>使用Flash创建fla来制作我们的面板，而不是使用Flex，我们创建的依然是一个AS3工程。</li>
 <li>fla发布成swc，导入工程，用AS3显示面板</li>
 <li>编译AS3工程，生成swf文件</li>

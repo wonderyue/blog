@@ -8,22 +8,22 @@
     </url>
 
     <url>
-        <loc>http://wonderdaystudio.com/categories/coding/</loc>
-        <lastmod>2020-05-30T00:43:24.745Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://wonderdaystudio.com/categories/drawing/</loc>
-        <lastmod>2020-05-30T00:10:47.792Z</lastmod>
+        <lastmod>2020-05-30T18:55:24.260Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://wonderdaystudio.com/categories/writing/</loc>
-        <lastmod>2020-05-30T00:10:47.787Z</lastmod>
+        <lastmod>2020-05-30T18:40:21.782Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wonderdaystudio.com/categories/coding/</loc>
+        <lastmod>2020-05-30T18:14:58.821Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

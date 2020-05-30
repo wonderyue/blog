@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>http://wonderdaystudio.com/tags/drawing/</loc>
+        <lastmod>2020-05-30T18:55:24.260Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wonderdaystudio.com/tags/writing/</loc>
+        <lastmod>2020-05-30T18:40:21.782Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wonderdaystudio.com/tags/game/</loc>
+        <lastmod>2020-05-30T18:14:58.821Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wonderdaystudio.com/tags/FPGA/</loc>
+        <lastmod>2020-05-30T17:41:30.333Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://wonderdaystudio.com/tags/django/</loc>
         <lastmod>2020-05-30T00:43:24.745Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,34 +40,6 @@
     <url>
         <loc>http://wonderdaystudio.com/tags/react/</loc>
         <lastmod>2020-05-30T00:43:24.745Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wonderdaystudio.com/tags/FPGA/</loc>
-        <lastmod>2020-05-30T00:13:50.722Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wonderdaystudio.com/tags/C/</loc>
-        <lastmod>2020-05-30T00:13:50.722Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wonderdaystudio.com/tags/game/</loc>
-        <lastmod>2020-05-30T00:13:43.396Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wonderdaystudio.com/tags/cocos2d-x/</loc>
-        <lastmod>2020-05-30T00:13:30.036Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -68,20 +68,6 @@
     <url>
         <loc>http://wonderdaystudio.com/tags/lua/</loc>
         <lastmod>2020-05-30T00:10:54.960Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wonderdaystudio.com/tags/drawing/</loc>
-        <lastmod>2020-05-30T00:10:47.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wonderdaystudio.com/tags/writing/</loc>
-        <lastmod>2020-05-30T00:10:47.787Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

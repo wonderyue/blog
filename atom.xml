@@ -38,9 +38,11 @@
 &lt;li&gt;edit mode for administrator&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This is the first one of a serial of articles, and I’d like to talk about things I should know earlier.&lt;/p&gt;
-&lt;h2 id=&quot;Packages-Lifesavers-I-should-know-earlier&quot;&gt;&lt;a href=&quot;#Packages-Lifesavers-I-should-know-earlier&quot; class=&quot;headerlink&quot; title=&quot;Packages(Lifesavers) I should know earlier&quot;&gt;&lt;/a&gt;Packages(Lifesavers) I should know earlier&lt;/h2&gt;&lt;h3 id=&quot;1-react-moment&quot;&gt;&lt;a href=&quot;#1-react-moment&quot; class=&quot;headerlink&quot; title=&quot;1. react-moment&quot;&gt;&lt;/a&gt;1. react-moment&lt;/h3&gt;&lt;!-- [react-moment](https://www.npmjs.com/package/react-moment) --&gt;
-&lt;p&gt;  I use DateTimeField in Django model, and it saved as a string like “2020-04-11T18:36:05.748Z” in database. It is hard to display it in the frontend. I add another read-only field when serializing the model, convert the DateTimeField value to timestamp. And create a Date object in the frontend. Then, I find this package, and revert what I have done…&lt;/p&gt;
-&lt;p&gt;  And it is also useful when you need to display “post a minute/two days ago” in a comment or feed component.&lt;/p&gt;
+&lt;h2&gt;Packages(Lifesavers) I should know earlier&lt;/h2&gt;
+&lt;h3&gt;1. react-moment&lt;/h3&gt;
+&lt;!-- [react-moment](https://www.npmjs.com/package/react-moment) --&gt;
+&lt;p&gt;I use DateTimeField in Django model, and it saved as a string like “2020-04-11T18:36:05.748Z” in database. It is hard to display it in the frontend. I add another read-only field when serializing the model, convert the DateTimeField value to timestamp. And create a Date object in the frontend. Then, I find this package, and revert what I have done…&lt;/p&gt;
+&lt;p&gt;And it is also useful when you need to display “post a minute/two days ago” in a comment or feed component.&lt;/p&gt;
     
     </summary>
     
@@ -59,7 +61,7 @@
     <link href="http://wonderdaystudio.com/2020/01/21/2020-01-21-%E6%88%91%E7%9A%84%E5%A6%88%E5%A6%88/"/>
     <id>http://wonderdaystudio.com/2020/01/21/2020-01-21-%E6%88%91%E7%9A%84%E5%A6%88%E5%A6%88/</id>
     <published>2020-01-21T22:21:37.000Z</published>
-    <updated>2020-05-30T00:06:23.898Z</updated>
+    <updated>2020-05-30T18:40:21.782Z</updated>
     
     <summary type="html">
     
@@ -86,8 +88,9 @@
     
     <summary type="html">
     
-      &lt;p&gt;Really like &lt;a href=&quot;https://apps.apple.com/app/id445770608&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Go2Shell&lt;/a&gt;, it allows you to open a terminal window to the current directory in Finder by a simple click. But unfortunately it is incompatible with MacOS 10.15. After a week of “open Terminal”, “type ‘cd ‘“, “drag directory into Terminal” and “press Enter”, I decide to build my own “Go2Shell”.&lt;/p&gt;
-&lt;h2 id=&quot;AppleScript&quot;&gt;&lt;a href=&quot;#AppleScript&quot; class=&quot;headerlink&quot; title=&quot;AppleScript&quot;&gt;&lt;/a&gt;AppleScript&lt;/h2&gt;&lt;p&gt;There may be many choices, Apple Script is the best for me. Simple and easy. What makes it easier is that before I figure out how to write AppleScript, I found the exact script I need from &lt;a href=&quot;https://github.com/LeEnno/alfred-terminalfinder/blob/master/src/ft.scpt.txt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alfred&lt;/a&gt;. &lt;/p&gt;
+      &lt;p&gt;Really like &lt;a href=&quot;https://apps.apple.com/app/id445770608&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Go2Shell&lt;/a&gt;, it allows you to open a terminal window to the current directory in Finder by a simple click. But unfortunately it is incompatible with MacOS 10.15. After a week of “open Terminal”, “type &#39;cd &#39;”, “drag directory into Terminal” and “press Enter”, I decide to build my own “Go2Shell”.&lt;/p&gt;
+&lt;h2&gt;AppleScript&lt;/h2&gt;
+&lt;p&gt;There may be many choices, Apple Script is the best for me. Simple and easy. What makes it easier is that before I figure out how to write AppleScript, I found the exact script I need from &lt;a href=&quot;https://github.com/LeEnno/alfred-terminalfinder/blob/master/src/ft.scpt.txt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alfred&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;script.png&quot; alt=&quot;script&quot;&gt;&lt;/p&gt;
     
     </summary>
@@ -109,21 +112,25 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;爱德华一世&quot;&gt;&lt;a href=&quot;#爱德华一世&quot; class=&quot;headerlink&quot; title=&quot;爱德华一世&quot;&gt;&lt;/a&gt;爱德华一世&lt;/h2&gt;&lt;p&gt;长腿爱德华，文治武功，军事家，谋略家，金雀花王朝的代表人物。&lt;/p&gt;
+      &lt;h2&gt;爱德华一世&lt;/h2&gt;
+&lt;p&gt;长腿爱德华，文治武功，军事家，谋略家，金雀花王朝的代表人物。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;威尔士的征服者&lt;/p&gt;
-&lt;p&gt;  授予王储威尔士亲王之位，这种传统沿袭至今。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;威尔士的征服者&lt;/p&gt;
+&lt;p&gt;授予王储威尔士亲王之位，这种传统沿袭至今。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;苏格兰之锤&lt;/p&gt;
-&lt;p&gt;  《勇敢的心》中，华莱士为首的苏格兰民族起义，反抗的就是这位英格兰国王。影片着重刻画了他阴险残忍的一面，包括恢复初夜权，鸿门宴吊死苏格兰贵族。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;苏格兰之锤&lt;/p&gt;
+&lt;p&gt;《勇敢的心》中，华莱士为首的苏格兰民族起义，反抗的就是这位英格兰国王。影片着重刻画了他阴险残忍的一面，包括恢复初夜权，鸿门宴吊死苏格兰贵族。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;《冰与火之歌》中泰温·兰尼斯特的原型&lt;/p&gt;
-&lt;p&gt;  他们的相似之处除了王者威严和政治手段外，还有对子女的苛刻和失望，尤其是对他的继承者，爱德华二世。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;《冰与火之歌》中泰温·兰尼斯特的原型&lt;/p&gt;
+&lt;p&gt;他们的相似之处除了王者威严和政治手段外，还有对子女的苛刻和失望，尤其是对他的继承者，爱德华二世。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&quot;braveheart.jpeg&quot; alt=&quot;勇敢的心&quot;&gt;&lt;/p&gt;
 &lt;div align=&quot;center&quot;&gt; 
-    &lt;font size=&quot;2&quot;&gt; 《勇敢的心》 &lt;/font&gt;
+	&lt;font size=&quot;2&quot;&gt; 《勇敢的心》 &lt;/font&gt;
 &lt;/div&gt;
     
     </summary>
@@ -147,7 +154,8 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot;一&quot;&gt;&lt;/a&gt;一&lt;/h4&gt;&lt;p&gt;22点30分，T大厦下，出租车又排起了长龙，一个个红色招牌犹如动物的眼睛，在黑夜中等待猎物。加班后的免费出租车是T社的福利之一，所以每晚它们都会聚集在这里。&lt;/p&gt;
+      &lt;h4&gt;一&lt;/h4&gt;
+&lt;p&gt;22点30分，T大厦下，出租车又排起了长龙，一个个红色招牌犹如动物的眼睛，在黑夜中等待猎物。加班后的免费出租车是T社的福利之一，所以每晚它们都会聚集在这里。&lt;/p&gt;
 &lt;p&gt;关上车门，我放平座椅，出租车是相对奢侈的享受，平时我是绝对负担不起的。因此每次坐进轿厢，我都能感到一种涌上头顶的优越感，装作自己是属于有这种消费能力的阶层。但，这种优越感又片刻即化为乌有。尽管在这座城市里，作为T社员工已足够让人艳羡，但此刻，车内唯一能满足我虚荣心的观众-司机-是可以看穿这种伪装的，因为导航仪上显示着“支付类型：公司账户”，“目的地：新浦东”。即便拿出收入的三分之二作为房租，新浦东也是我唯一的选择，毕竟我只是最基层的操作员。&lt;/p&gt;
 &lt;p&gt;越向东开，路面状况越糟糕，T社开采事故之后，沿海变成了贫民区，到处是裸露的红色管道。然而，车开得很稳，即使在飞过浦建大桥长达十米的裂缝时都没有一丝失重感。我端详起司机，这应该是我第三次坐他的车，我对他印象很深，一个车技娴熟，一言不发的中年男人，年纪大概五十左右，胡须打理得很干净，衬衫也没有一丝褶皱，也许他在成为出租车司机前做过更体面的工作吧。&lt;/p&gt;
     
@@ -197,14 +205,17 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;应用&quot;&gt;&lt;a href=&quot;#应用&quot; class=&quot;headerlink&quot; title=&quot;应用&quot;&gt;&lt;/a&gt;应用&lt;/h2&gt;&lt;h3 id=&quot;使用上的Tips&quot;&gt;&lt;a href=&quot;#使用上的Tips&quot; class=&quot;headerlink&quot; title=&quot;使用上的Tips:&quot;&gt;&lt;/a&gt;使用上的Tips:&lt;/h3&gt;&lt;ul&gt;
+      &lt;h2&gt;应用&lt;/h2&gt;
+&lt;h3&gt;使用上的Tips:&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;Lua中除了nil和bool型的false，其余值的逻辑判断都为true，包括0。&lt;/li&gt;
 &lt;li&gt;Lua中异或和取反运算符都是“~”&lt;/li&gt;
 &lt;li&gt;用local保存频繁使用的全局func会省去查找过程，提升效率。&lt;/li&gt;
-&lt;li&gt;一个字符串有大量拼接操作时，一起拼接比一次次拼接高效；用table.insert，最后table.concat会比直接使用“..”拼接高效。&lt;/li&gt;
+&lt;li&gt;一个字符串有大量拼接操作时，一起拼接比一次次拼接高效；用table.insert，最后table.concat会比直接使用“…”拼接高效。&lt;/li&gt;
 &lt;li&gt;尾部扩充table时，t[#t+1] = v要比table.insert(t,v)快一点。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;面向对象技巧：&quot;&gt;&lt;a href=&quot;#面向对象技巧：&quot; class=&quot;headerlink&quot; title=&quot;面向对象技巧：&quot;&gt;&lt;/a&gt;面向对象技巧：&lt;/h3&gt;&lt;ul&gt;
+&lt;h3&gt;面向对象技巧：&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;metatables和metamethods是Lua实现多态的主要手段。&lt;/li&gt;
 &lt;li&gt;运算符重载，只读等均可以通过metamethods实现：&lt;/li&gt;
 &lt;/ul&gt;
@@ -228,11 +239,14 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;类似台湾夜市弹珠台或者柏青哥&lt;br&gt;&lt;img src=&quot;pinball.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+      &lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;类似台湾夜市弹珠台或者柏青哥&lt;br&gt;
+&lt;img src=&quot;pinball.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;蓄力，拉杆，将弹珠弹出&lt;/li&gt;
-&lt;li&gt;经过碰撞落入下方槽中&lt;h2 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;经过碰撞落入下方槽中&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;分析&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;首先，有两点看似矛盾的需求：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;需要真实的物理表现，结果遵循物理规律&lt;/li&gt;
@@ -262,14 +276,17 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;总体架构&quot;&gt;&lt;a href=&quot;#总体架构&quot; class=&quot;headerlink&quot; title=&quot;总体架构&quot;&gt;&lt;/a&gt;总体架构&lt;/h2&gt;&lt;p&gt;逻辑与渲染分离。如有需要，逻辑层可被客户端和服务器公用。&lt;/p&gt;
-&lt;h2 id=&quot;移动与更新&quot;&gt;&lt;a href=&quot;#移动与更新&quot; class=&quot;headerlink&quot; title=&quot;移动与更新&quot;&gt;&lt;/a&gt;移动与更新&lt;/h2&gt;&lt;p&gt;slither.io与8bit贪吃蛇不同，它的移动是像素级的，而不是一个格子一个格子移动的。&lt;/p&gt;
-&lt;p&gt;但是如果考虑绘制时，采用的是如下方法来决定身体的节数，就会发生身体的拐点处鳞片跳变（浮点数及精度原因），以及转弯不平滑的问题。 &lt;/p&gt;
+      &lt;h2&gt;总体架构&lt;/h2&gt;
+&lt;p&gt;逻辑与渲染分离。如有需要，逻辑层可被客户端和服务器公用。&lt;/p&gt;
+&lt;h2&gt;移动与更新&lt;/h2&gt;
+&lt;p&gt;slither.io与8bit贪吃蛇不同，它的移动是像素级的，而不是一个格子一个格子移动的。&lt;/p&gt;
+&lt;p&gt;但是如果考虑绘制时，采用的是如下方法来决定身体的节数，就会发生身体的拐点处鳞片跳变（浮点数及精度原因），以及转弯不平滑的问题。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;身体长度 / 鳞片间距 = 鳞片数量&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;最终参考了贪吃蛇大作战的方法，蛇的最小移动速度就是鳞片的间距，具体实现如下：&lt;/p&gt;
-&lt;h3 id=&quot;逻辑层&quot;&gt;&lt;a href=&quot;#逻辑层&quot; class=&quot;headerlink&quot; title=&quot;逻辑层&quot;&gt;&lt;/a&gt;逻辑层&lt;/h3&gt;&lt;p&gt;蛇与位置相关的逻辑数据只有拐点列表，它记录了蛇的头尾和每一个拐点，使蛇身由一条条线段连接而成。&lt;/p&gt;
+&lt;h3&gt;逻辑层&lt;/h3&gt;
+&lt;p&gt;蛇与位置相关的逻辑数据只有拐点列表，它记录了蛇的头尾和每一个拐点，使蛇身由一条条线段连接而成。&lt;/p&gt;
 &lt;p&gt;移动时，头拐点按照蛇头朝向移动一段距离，同时尾拐点缩短同样距离，如果最后一段长度不足移动距离则继续向上查找。如此更新拐点列表。&lt;/p&gt;
     
     </summary>
@@ -292,15 +309,18 @@
     <summary type="html">
     
       &lt;p&gt;想做一款iOS应用练练手，简单考察了一下，做天气或备忘录未免太简单，太复杂的又不适合练手，最终锁定了“历史上的今天”的展示应用，会涉及到网络请求，网络图片加载，TableView，WebView等，难度适中，开整。&lt;/p&gt;
-&lt;h1 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h1&gt;&lt;p&gt;向以下伟大的工具致敬：&lt;/p&gt;
-&lt;h2 id=&quot;StoryBoard&quot;&gt;&lt;a href=&quot;#StoryBoard&quot; class=&quot;headerlink&quot; title=&quot;StoryBoard&quot;&gt;&lt;/a&gt;StoryBoard&lt;/h2&gt;&lt;p&gt;依然有人因为各种原因排斥使用StoryBoard，但我一贯认为解耦是必须的，有问题就解决问题，放弃使用转而手写UI是是workflow的倒退。&lt;/p&gt;
+&lt;h1&gt;工具&lt;/h1&gt;
+&lt;p&gt;向以下伟大的工具致敬：&lt;/p&gt;
+&lt;h2&gt;StoryBoard&lt;/h2&gt;
+&lt;p&gt;依然有人因为各种原因排斥使用StoryBoard，但我一贯认为解耦是必须的，有问题就解决问题，放弃使用转而手写UI是是workflow的倒退。&lt;/p&gt;
 &lt;p&gt;要点：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;autoLayout&lt;/li&gt;
 &lt;li&gt;seque&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;感谢林老师的&lt;a href=&quot;http://www.imooc.com/space/teacher/id/225594&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;视频教程&lt;/a&gt;，零基础与负基础的福音。&lt;/p&gt;
-&lt;h2 id=&quot;CocoaPods&quot;&gt;&lt;a href=&quot;#CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;CocoaPods&quot;&gt;&lt;/a&gt;CocoaPods&lt;/h2&gt;&lt;p&gt;以往做游戏时接SDK的经历不堪回首，当时不知道CocoaPods的存在。漫漫血泪史，第三方工具必须提前调研。&lt;/p&gt;
+&lt;h2&gt;CocoaPods&lt;/h2&gt;
+&lt;p&gt;以往做游戏时接SDK的经历不堪回首，当时不知道CocoaPods的存在。漫漫血泪史，第三方工具必须提前调研。&lt;/p&gt;
 &lt;p&gt;用到的SDK：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;AFNetworking&lt;/li&gt;
@@ -329,10 +349,12 @@
     
       &lt;p&gt;&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;是款很适合程序猿使用的博客框架，同octopress一样使用markdown编写博文，不同的是采用node.js来生成静态网页，速度更快。&lt;/p&gt;
 &lt;p&gt;Markdown的编辑器也有很多，&lt;a href=&quot;http://25.io/mou/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mou&lt;/a&gt;就是一个很好的选择。还有在线编辑器，如&lt;a href=&quot;http://www.maxiang.info/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;马克飞象&lt;/a&gt;。当然，忽略实时预览的话，任何文本编辑器也是都可以胜任的，比如&lt;a href=&quot;http://www.sublimetext.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sublime&lt;/a&gt;。为了更加肆意地懒惰，决定开发一个对应Hexo的Sublime插件。&lt;/p&gt;
-&lt;h1 id=&quot;Sublime插件开发&quot;&gt;&lt;a href=&quot;#Sublime插件开发&quot; class=&quot;headerlink&quot; title=&quot;Sublime插件开发&quot;&gt;&lt;/a&gt;Sublime插件开发&lt;/h1&gt;&lt;h2 id=&quot;新建插件&quot;&gt;&lt;a href=&quot;#新建插件&quot; class=&quot;headerlink&quot; title=&quot;新建插件&quot;&gt;&lt;/a&gt;新建插件&lt;/h2&gt;&lt;ul&gt;
+&lt;h1&gt;Sublime插件开发&lt;/h1&gt;
+&lt;h2&gt;新建插件&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;Preferences -&amp;gt; Browse Packages… 新建目录，用来存放我们的插件，这里就叫做BlogAssistant&lt;/li&gt;
 &lt;li&gt;Tools-&amp;gt;New Plugin… 创建新的插件，命名为BlogAssistant.py保存在之前的文件夹下&lt;/li&gt;
-&lt;li&gt;ctrl+`打开控制台，输入view.run_command(‘example’)，如果当前文档前插入了”Hello, World!”则表明创建成功&lt;/li&gt;
+&lt;li&gt;ctrl+`打开控制台，输入view.run_command(‘example’)，如果当前文档前插入了&amp;quot;Hello, World!&amp;quot;则表明创建成功&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -355,10 +377,13 @@
     <summary type="html">
     
       &lt;p&gt;完整设计并完成了一款2D横版动作游戏。对比刚入行时，现在做游戏架构设计，考虑最多的关键词是“解耦”，“数据驱动”，“自动化”。这次设计也是本着这样的原则。&lt;/p&gt;
-&lt;h2 id=&quot;打击判定&quot;&gt;&lt;a href=&quot;#打击判定&quot; class=&quot;headerlink&quot; title=&quot;打击判定&quot;&gt;&lt;/a&gt;打击判定&lt;/h2&gt;&lt;h3 id=&quot;1-碰撞检测方式选择：&quot;&gt;&lt;a href=&quot;#1-碰撞检测方式选择：&quot; class=&quot;headerlink&quot; title=&quot;1.  碰撞检测方式选择：&quot;&gt;&lt;/a&gt;1.  碰撞检测方式选择：&lt;/h3&gt;&lt;ul&gt;
+&lt;h2&gt;打击判定&lt;/h2&gt;
+&lt;h3&gt;1.  碰撞检测方式选择：&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;物理引擎：最偷懒的方式，通常有物理引擎对应的编辑器来编辑碰撞体（3D）或碰撞框（2D）。以2D为例，boundingBox通常编辑为圆形或多边形，适用于精度要求高而效率要求不高的情况。&lt;/li&gt;
 &lt;li&gt;AABB：效率最高的方式，矩形间的碰撞检测，适用于效率要求高而精度要求不高的情况。&lt;/li&gt;
-&lt;li&gt;像素级碰撞检测：精度最高的方式，基于像素值是否透明和交叠来检测，同样效率不高。&lt;br&gt;对于动作游戏，当大量敌人，远程武器，技能满屏飞时不会比弹幕游戏对碰撞效率的要求低多少。这里采用AABB的方式，事实证明不影响体验，足以满足精度需求，而实际上很多经典的ACT甚至FTG也都是采用的这种方式。&lt;/li&gt;
+&lt;li&gt;像素级碰撞检测：精度最高的方式，基于像素值是否透明和交叠来检测，同样效率不高。&lt;br&gt;
+对于动作游戏，当大量敌人，远程武器，技能满屏飞时不会比弹幕游戏对碰撞效率的要求低多少。这里采用AABB的方式，事实证明不影响体验，足以满足精度需求，而实际上很多经典的ACT甚至FTG也都是采用的这种方式。&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -382,11 +407,13 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Flash控件使用&quot;&gt;&lt;a href=&quot;#Flash控件使用&quot; class=&quot;headerlink&quot; title=&quot;Flash控件使用&quot;&gt;&lt;/a&gt;Flash控件使用&lt;/h2&gt;&lt;p&gt;下面是我使用到的控件，可以参考一下：&lt;/p&gt;
+      &lt;h2&gt;Flash控件使用&lt;/h2&gt;
+&lt;p&gt;下面是我使用到的控件，可以参考一下：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;stage03.png&quot; alt=&quot;控件参考&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;DataGrid的使用&quot;&gt;&lt;a href=&quot;#DataGrid的使用&quot; class=&quot;headerlink&quot; title=&quot;DataGrid的使用&quot;&gt;&lt;/a&gt;DataGrid的使用&lt;/h3&gt;&lt;p&gt; 1 设置表头&lt;/p&gt;
+&lt;h3&gt;DataGrid的使用&lt;/h3&gt;
+&lt;p&gt;1 设置表头&lt;/p&gt;
 &lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;dataGrid.columns&lt;/span&gt; = [&lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;level&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;count&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;phase&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;wave&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;behavior&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;x&quot;&lt;/span&gt;]&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt; 2 填充数据&lt;/p&gt;
+&lt;p&gt;2 填充数据&lt;/p&gt;
 &lt;figure class=&quot;highlight reasonml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var dp:DataProvider = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;constructor&quot;&gt;DataProvider()&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dp.add&lt;span class=&quot;constructor&quot;&gt;Item(&amp;#123;&lt;span class=&quot;params&quot;&gt;id&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;],&lt;span class=&quot;params&quot;&gt;level&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;level&quot;&lt;/span&gt;],&lt;span class=&quot;params&quot;&gt;count&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;count&quot;&lt;/span&gt;]&lt;span class=&quot;operator&quot;&gt;||&lt;/span&gt;1,&lt;span class=&quot;params&quot;&gt;phase&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;phase&quot;&lt;/span&gt;],&lt;span class=&quot;params&quot;&gt;wave&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;wave&quot;&lt;/span&gt;]&lt;span class=&quot;operator&quot;&gt;||&lt;/span&gt;1,&lt;span class=&quot;params&quot;&gt;behavior&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;behavior&quot;&lt;/span&gt;]&lt;span class=&quot;operator&quot;&gt;||&lt;/span&gt;1,&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;x&quot;&lt;/span&gt;],&lt;span class=&quot;params&quot;&gt;y&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;y&quot;&lt;/span&gt;],&lt;span class=&quot;params&quot;&gt;depth&lt;/span&gt;:&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;&quot;depth&quot;&lt;/span&gt;]&amp;#125;;)&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dataGrid.dataProvider = dp;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;填入columns中不存在的key-value是不会显示的。&lt;/p&gt;
     
@@ -409,9 +436,10 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;AS3调用Flash-javaScript-API-JSAPI-命令&quot;&gt;&lt;a href=&quot;#AS3调用Flash-javaScript-API-JSAPI-命令&quot; class=&quot;headerlink&quot; title=&quot;AS3调用Flash javaScript API(JSAPI)命令&quot;&gt;&lt;/a&gt;AS3调用Flash javaScript API(JSAPI)命令&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://help.adobe.com/zh_CN/FlashPlatform/reference/actionscript/3/adobe/utils/package.html#MMExecute&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MMExecute&lt;/a&gt;函数正是我们需要的。&lt;/p&gt;
+      &lt;h4&gt;AS3调用Flash javaScript API(JSAPI)命令&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;http://help.adobe.com/zh_CN/FlashPlatform/reference/actionscript/3/adobe/utils/package.html#MMExecute&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MMExecute&lt;/a&gt;函数正是我们需要的。&lt;/p&gt;
 &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;MMExecute&lt;/span&gt;(&quot;&lt;span class=&quot;selector-tag&quot;&gt;fl&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.getDocumentDOM&lt;/span&gt;()&lt;span class=&quot;selector-class&quot;&gt;.library&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.items&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.length&lt;/span&gt;&quot;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;如上代码我们即可在AS3中通过调用JSAPI得到当前库元件数量。但是要注意，MMExecute只能运行在Flash CS中，急于在Flash Builder中尝试上述命令是行不通的，可以参考&lt;a href=&quot;/2015/04/25/2015-04-25-使用Flash插件制作关卡编辑器（一）分析和准备/&quot;&gt;上一节&lt;/a&gt;插件面板的制作方法。&lt;/p&gt;
+&lt;p&gt;如上代码我们即可在AS3中通过调用JSAPI得到当前库元件数量。但是要注意，MMExecute只能运行在Flash CS中，急于在Flash Builder中尝试上述命令是行不通的，可以参考&lt;a href=&quot;/2015/04/25/2015-04-25-%E4%BD%BF%E7%94%A8Flash%E6%8F%92%E4%BB%B6%E5%88%B6%E4%BD%9C%E5%85%B3%E5%8D%A1%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E4%B8%80%EF%BC%89%E5%88%86%E6%9E%90%E5%92%8C%E5%87%86%E5%A4%87/&quot;&gt;上一节&lt;/a&gt;插件面板的制作方法。&lt;/p&gt;
 &lt;p&gt;如果要给jsfl传参该怎么办呢？&lt;/p&gt;
 &lt;figure class=&quot;highlight actionscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(s:String)&lt;/span&gt;:void&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	MMExecute(&lt;span class=&quot;string&quot;&gt;&quot;fl.trace(\&quot;&quot;&lt;/span&gt;+s+&lt;span class=&quot;string&quot;&gt;&quot;\&quot;);&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;如上所示，其实传参也不难，只需要注意转义就行了。&lt;/p&gt;
@@ -436,7 +464,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;功能描述&quot;&gt;&lt;a href=&quot;#功能描述&quot; class=&quot;headerlink&quot; title=&quot;功能描述&quot;&gt;&lt;/a&gt;功能描述&lt;/h3&gt;&lt;ul&gt;
+      &lt;h3&gt;功能描述&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;在Flash CS中通过元件拖拽完成场景中背景，装饰物，主角，敌人等元素的布置&lt;/li&gt;
 &lt;li&gt;通过jsfl完成元件信息解析，并传递给AS做进一步处理（关键）&lt;/li&gt;
 &lt;li&gt;使用AS3编写插件面板，展示jsfl传来的信息，并通过表单，输入框等进行进一步编辑&lt;/li&gt;
@@ -446,7 +475,8 @@
 &lt;p&gt;&lt;img src=&quot;stage01.png&quot; alt=&quot;布置场景&quot;&gt;&lt;/p&gt;
 &lt;p&gt;插件面板：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;stage02.png&quot; alt=&quot;插件面板&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;jsfl准备&quot;&gt;&lt;a href=&quot;#jsfl准备&quot; class=&quot;headerlink&quot; title=&quot;jsfl准备&quot;&gt;&lt;/a&gt;jsfl准备&lt;/h3&gt;&lt;p&gt;jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操作，如批量命名，修改元件属性等。&lt;/p&gt;
+&lt;h3&gt;jsfl准备&lt;/h3&gt;
+&lt;p&gt;jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操作，如批量命名，修改元件属性等。&lt;/p&gt;
 &lt;p&gt;jsfl用很多实用的方法，可参见&lt;a href=&quot;http://help.adobe.com/zh_CN/flash/cs/extend/flash_cs5_extending.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;。这里只介绍我们需要用到的方法。&lt;/p&gt;
     
     </summary>
@@ -497,14 +527,19 @@
       &lt;p&gt;用过Unity开发的工程师们一定对Mecanim的方便快捷印象深刻，用过之后再也不想回到刀耕火种的时代了。&lt;/p&gt;
 &lt;p&gt;目前在做egret项目，首先就动手做了一个仿制Mecanim的FSM编辑器。工具做得越早，受益越多。&lt;/p&gt;
 &lt;p&gt;仓库地址：&lt;a href=&quot;https://github.com/wonderyue/Animator&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/wonderyue/Animator&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;简要说明&quot;&gt;&lt;a href=&quot;#简要说明&quot; class=&quot;headerlink&quot; title=&quot;简要说明&quot;&gt;&lt;/a&gt;简要说明&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;State：状态。成员变量中包含Transition数组。&lt;/p&gt;
+&lt;h4&gt;简要说明&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;State：状态。成员变量中包含Transition数组。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Transition：状态跳转。成员变量包含from（初始状态）和to（跳转状态），以及condition数组。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Transition：状态跳转。成员变量包含from（初始状态）和to（跳转状态），以及condition数组。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Condition：跳转条件。成员变量包含Parameter，和logic（因Parameter而异，如number型逻辑包括”&amp;gt;”,”&amp;lt;”,”=”,”≠”），value（如bool型value可为true或false）&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Condition：跳转条件。成员变量包含Parameter，和logic（因Parameter而异，如number型逻辑包括&amp;quot;&amp;gt;&amp;quot;,&amp;quot;&amp;lt;&amp;quot;,&amp;quot;=&amp;quot;,“≠”），value（如bool型value可为true或false）&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Parameter：参数。成员变量包含类型（bool，number，trigger，complete，其中complete相当于Mecanim中的exitTime，代表跳转条件为动画播放结束）&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Parameter：参数。成员变量包含类型（bool，number，trigger，complete，其中complete相当于Mecanim中的exitTime，代表跳转条件为动画播放结束）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
     
@@ -556,8 +591,9 @@
     
     <summary type="html">
     
-      &lt;h1 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot; &quot;&gt;&lt;/a&gt; &lt;/h1&gt;&lt;p&gt;　　喝了一口茶，因为某个词的启发，思绪自由地伸展着。司磊准时出现了，他穿着便装，纯色的T恤和裤子，也没有佩戴任何首饰，很简单。这种再会的场面和我想象中的不差分毫。因为他是个不容易改变的人。&lt;/p&gt;
-&lt;p&gt;　　大学期间，司磊一直是我追随的对象，他的心理年龄比我大很多。我想，那是因为他的经历比我丰富，然而这又与他的不易改变相矛盾。所以有时我觉得我完全不了解这个人，交往得越深越能感受到这点。某个角落，任何角色都无法给予慰藉，所以人终究还是孤独的群居动物。&lt;/p&gt;
+      &lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;喝了一口茶，因为某个词的启发，思绪自由地伸展着。司磊准时出现了，他穿着便装，纯色的T恤和裤子，也没有佩戴任何首饰，很简单。这种再会的场面和我想象中的不差分毫。因为他是个不容易改变的人。&lt;/p&gt;
+&lt;p&gt;大学期间，司磊一直是我追随的对象，他的心理年龄比我大很多。我想，那是因为他的经历比我丰富，然而这又与他的不易改变相矛盾。所以有时我觉得我完全不了解这个人，交往得越深越能感受到这点。某个角落，任何角色都无法给予慰藉，所以人终究还是孤独的群居动物。&lt;/p&gt;
     
     </summary>
     
@@ -578,18 +614,19 @@
     
     <summary type="html">
     
-      &lt;h1 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot; &quot;&gt;&lt;/a&gt; &lt;/h1&gt;&lt;p&gt;　　船稳稳地航行着，风和日丽，海鸥不时地落在栏杆上。水手们洗好了衣服，大多半裸着躺在甲板上晒太阳。&lt;/p&gt;
-&lt;p&gt;　　“天气真他妈好！”大胡子说了句，说的时候他那堆在一起的肚皮还一鼓一鼓的。&lt;/p&gt;
-&lt;p&gt;　　大伙一起跟着嘿嘿的笑着。忽然谁的肚子叫了，我发誓那是我听过的肚子所能发出的最响的声音了。昨天我也发过同样的誓，那是大胃托德一直在刷新他自己的记录的原因。&lt;/p&gt;
-&lt;p&gt;　　听到这个下厨信号的潘尼已经伸伸腰站起来了。他真是个好厨子，他做的菜好吃极了。&lt;/p&gt;
-&lt;p&gt;　　“好吧，说说你们想吃什么？”&lt;/p&gt;
-&lt;p&gt;　　“腊肠，猪排，鸡腿⋯⋯”大胃托德又开始重复他的梦幻菜单了。&lt;/p&gt;
-&lt;p&gt;　　“土豆和白菜你选哪个？”早就习惯了的潘尼根本不理会他。&lt;/p&gt;
-&lt;p&gt;　　“白菜！”几个人异口同声地答道。&lt;/p&gt;
-&lt;p&gt;　　“白菜，当然是白菜，又新鲜又有口感。”巴兹也发表了意见。&lt;/p&gt;
-&lt;p&gt;　　“可是土豆吃起来才更有味道吧？”黑狗持反对意见。&lt;/p&gt;
-&lt;p&gt;　　“嗯，土豆有利于我对肉类的幻想。”大胃托德也是土豆的拥护者。&lt;/p&gt;
-&lt;p&gt;　　“好吧，来投票吧！”&lt;/p&gt;
+      &lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;船稳稳地航行着，风和日丽，海鸥不时地落在栏杆上。水手们洗好了衣服，大多半裸着躺在甲板上晒太阳。&lt;/p&gt;
+&lt;p&gt;“天气真他妈好！”大胡子说了句，说的时候他那堆在一起的肚皮还一鼓一鼓的。&lt;/p&gt;
+&lt;p&gt;大伙一起跟着嘿嘿的笑着。忽然谁的肚子叫了，我发誓那是我听过的肚子所能发出的最响的声音了。昨天我也发过同样的誓，那是大胃托德一直在刷新他自己的记录的原因。&lt;/p&gt;
+&lt;p&gt;听到这个下厨信号的潘尼已经伸伸腰站起来了。他真是个好厨子，他做的菜好吃极了。&lt;/p&gt;
+&lt;p&gt;“好吧，说说你们想吃什么？”&lt;/p&gt;
+&lt;p&gt;“腊肠，猪排，鸡腿⋯⋯”大胃托德又开始重复他的梦幻菜单了。&lt;/p&gt;
+&lt;p&gt;“土豆和白菜你选哪个？”早就习惯了的潘尼根本不理会他。&lt;/p&gt;
+&lt;p&gt;“白菜！”几个人异口同声地答道。&lt;/p&gt;
+&lt;p&gt;“白菜，当然是白菜，又新鲜又有口感。”巴兹也发表了意见。&lt;/p&gt;
+&lt;p&gt;“可是土豆吃起来才更有味道吧？”黑狗持反对意见。&lt;/p&gt;
+&lt;p&gt;“嗯，土豆有利于我对肉类的幻想。”大胃托德也是土豆的拥护者。&lt;/p&gt;
+&lt;p&gt;“好吧，来投票吧！”&lt;/p&gt;
     
     </summary>
     

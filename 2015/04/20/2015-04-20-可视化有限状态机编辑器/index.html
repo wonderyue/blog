@@ -154,12 +154,12 @@
                     
 
                         
+                    
+
+                        
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
-                    
-
                         
                     
                     
@@ -215,22 +215,29 @@
                 <p>用过Unity开发的工程师们一定对Mecanim的方便快捷印象深刻，用过之后再也不想回到刀耕火种的时代了。</p>
 <p>目前在做egret项目，首先就动手做了一个仿制Mecanim的FSM编辑器。工具做得越早，受益越多。</p>
 <p>仓库地址：<a href="https://github.com/wonderyue/Animator" target="_blank" rel="noopener">https://github.com/wonderyue/Animator</a></p>
-<h4><span id="简要说明">简要说明</span></h4><ul>
-<li><p>State：状态。成员变量中包含Transition数组。</p>
+<h4><span id="简要说明">简要说明</span></h4>
+<ul>
+<li>
+<p>State：状态。成员变量中包含Transition数组。</p>
 </li>
-<li><p>Transition：状态跳转。成员变量包含from（初始状态）和to（跳转状态），以及condition数组。</p>
+<li>
+<p>Transition：状态跳转。成员变量包含from（初始状态）和to（跳转状态），以及condition数组。</p>
 </li>
-<li><p>Condition：跳转条件。成员变量包含Parameter，和logic（因Parameter而异，如number型逻辑包括”&gt;”,”&lt;”,”=”,”≠”），value（如bool型value可为true或false）</p>
+<li>
+<p>Condition：跳转条件。成员变量包含Parameter，和logic（因Parameter而异，如number型逻辑包括&quot;&gt;&quot;,&quot;&lt;&quot;,&quot;=&quot;,“≠”），value（如bool型value可为true或false）</p>
 </li>
-<li><p>Parameter：参数。成员变量包含类型（bool，number，trigger，complete，其中complete相当于Mecanim中的exitTime，代表跳转条件为动画播放结束）</p>
+<li>
+<p>Parameter：参数。成员变量包含类型（bool，number，trigger，complete，其中complete相当于Mecanim中的exitTime，代表跳转条件为动画播放结束）</p>
 </li>
 </ul>
 <a id="more"></a>
-<h4><span id="示例">示例</span></h4><p> <img src="animator01.gif" alt="enter image description here"></p>
+<h4><span id="示例">示例</span></h4>
+<p><img src="animator01.gif" alt="enter image description here"></p>
 <p>导出json文件格式：</p>
 <p>大概就是下面这样事儿的。为了方便理解，只与编辑器有关的字段我没有给出，如果是用在动画以外的情景使用状态机，animation字段也可以忽视。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"state"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"state"</span>: <span class="string">"idle"</span>,</span><br><span class="line">            <span class="attr">"transition"</span>: [&#123;</span><br><span class="line">                <span class="attr">"condition"</span>: [&#123;</span><br><span class="line">                    <span class="attr">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                    <span class="attr">"logic"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"id"</span>: <span class="string">"run"</span>,</span><br><span class="line">                    <span class="attr">"type"</span>: <span class="number">1</span></span><br><span class="line">                &#125;],</span><br><span class="line">                <span class="attr">"nextState"</span>: <span class="string">"run"</span></span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="attr">"default"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"animation"</span>: <span class="string">"idle_animation"</span></span><br><span class="line">        &#125;, </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"state"</span>: <span class="string">"run"</span>,</span><br><span class="line">            <span class="attr">"transition"</span>: [&#123;</span><br><span class="line">                <span class="attr">"condition"</span>: [&#123;</span><br><span class="line">                    <span class="attr">"value"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"logic"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"id"</span>: <span class="string">"run"</span>,</span><br><span class="line">                    <span class="attr">"type"</span>: <span class="number">1</span></span><br><span class="line">                &#125;],</span><br><span class="line">                <span class="attr">"nextState"</span>: <span class="string">"idle"</span></span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="attr">"animation"</span>: <span class="string">"run_animation"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="动画应用">动画应用</span></h4><p>下面以egret的dragonBones应用为例</p>
+<h4><span id="动画应用">动画应用</span></h4>
+<p>下面以egret的dragonBones应用为例</p>
 <p>仓库地址：<a href="https://github.com/wonderyue/AnimatorDemo.git" target="_blank" rel="noopener">https://github.com/wonderyue/AnimatorDemo.git</a></p>
 <p>首先导出egret格式的骨骼动画</p>
 <p><img src="animator02.png" alt="enter image description here"></p>
@@ -239,11 +246,16 @@
 <p>稍微编辑一下</p>
 <p><img src="animator04.png" alt="enter image description here"></p>
 <p>最后点击save，保存下来，放到工程资源目录下。</p>
-<h4><span id="探讨">探讨</span></h4><p>代码部分参考demo即可，非常简单，不过300行。只对个别部分做一些探讨：</p>
+<h4><span id="探讨">探讨</span></h4>
+<p>代码部分参考demo即可，非常简单，不过300行。只对个别部分做一些探讨：</p>
 <ol>
-<li><p>文件名暂时有严格的要求。<br>要导入的骨骼文件必须以”skeleton.json”结尾，保存的输出文件必须以”fsm.json”结尾。这部分在编辑器的源码中可以看到，因为扩展名都是json，所以暂时对文件名有了比较严格的要求。这部分可以根据具体应用定制。</p>
+<li>
+<p>文件名暂时有严格的要求。<br>
+要导入的骨骼文件必须以&quot;skeleton.json&quot;结尾，保存的输出文件必须以&quot;fsm.json&quot;结尾。这部分在编辑器的源码中可以看到，因为扩展名都是json，所以暂时对文件名有了比较严格的要求。这部分可以根据具体应用定制。</p>
 </li>
-<li><p>关于业务逻辑的一些建议。<br>涉及到具体业务逻辑，如动作游戏的动画切换，可能会涉及到以下问题。第一种是立即切换，如anyState跳转到die，我们一般希望立即跳转。第二种是有限窗口内跳转，比如三连击时，我们不希望玩家点击三次攻击动画一瞬间播放到了第三击而前两击几乎看不到。为了兼顾上面两种情况，我们可以在跳转前加一个判断，条件可能是当前动画名称，下一个动画名称，是否循环播放以及cutTime/totalTime等几个条件的逻辑组合。</p>
+<li>
+<p>关于业务逻辑的一些建议。<br>
+涉及到具体业务逻辑，如动作游戏的动画切换，可能会涉及到以下问题。第一种是立即切换，如anyState跳转到die，我们一般希望立即跳转。第二种是有限窗口内跳转，比如三连击时，我们不希望玩家点击三次攻击动画一瞬间播放到了第三击而前两击几乎看不到。为了兼顾上面两种情况，我们可以在跳转前加一个判断，条件可能是当前动画名称，下一个动画名称，是否循环播放以及cutTime/totalTime等几个条件的逻辑组合。</p>
 </li>
 </ol>
 

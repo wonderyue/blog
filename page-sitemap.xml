@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>http://wonderdaystudio.com/about/</loc>
+        <lastmod>2020-05-30T18:52:37.940Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>http://wonderdaystudio.com/404.html</loc>
         <lastmod>2020-05-30T14:26:39.606Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,13 +24,6 @@
     <url>
         <loc>http://wonderdaystudio.com/category/</loc>
         <lastmod>2020-05-30T03:22:39.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://wonderdaystudio.com/about/</loc>
-        <lastmod>2020-05-30T00:06:23.905Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
