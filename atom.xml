@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wonderdaystudio.com/"/>
-  <updated>2020-05-30T00:43:24.745Z</updated>
+  <updated>2022-11-25T04:53:50.936Z</updated>
   <id>http://wonderdaystudio.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小孟</title>
+    <link href="http://wonderdaystudio.com/2022/11/14/2022-11-14-%E5%B0%8F%E5%AD%9F/"/>
+    <id>http://wonderdaystudio.com/2022/11/14/2022-11-14-%E5%B0%8F%E5%AD%9F/</id>
+    <published>2022-11-14T15:39:23.000Z</published>
+    <updated>2022-11-25T04:53:50.936Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;小孟.png&quot; alt=&quot;enter image description
+        
+      
+    
+    </summary>
+    
+    
+      <category term="drawing" scheme="http://wonderdaystudio.com/categories/drawing/"/>
+    
+    
+      <category term="drawing" scheme="http://wonderdaystudio.com/tags/drawing/"/>
+    
+  </entry>
   
   <entry>
     <title>Build an ecommerce website with React and Django (1)</title>
@@ -232,8 +259,8 @@
   
   <entry>
     <title>弹珠台抽奖机的实现</title>
-    <link href="http://wonderdaystudio.com/2017/07/02/2017-07-02-%E5%BC%B9%E7%8F%A0%E5%8F%B0%E6%8A%BD%E5%A5%96%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://wonderdaystudio.com/2017/07/02/2017-07-02-%E5%BC%B9%E7%8F%A0%E5%8F%B0%E6%8A%BD%E5%A5%96%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
+    <link href="http://wonderdaystudio.com/2017/07/01/2017-07-02-%E5%BC%B9%E7%8F%A0%E5%8F%B0%E6%8A%BD%E5%A5%96%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://wonderdaystudio.com/2017/07/01/2017-07-02-%E5%BC%B9%E7%8F%A0%E5%8F%B0%E6%8A%BD%E5%A5%96%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
     <published>2017-07-02T04:22:33.000Z</published>
     <updated>2020-05-30T00:11:01.520Z</updated>
     
@@ -429,8 +456,8 @@
   
   <entry>
     <title>使用Flash制作关卡编辑器(2)</title>
-    <link href="http://wonderdaystudio.com/2015/04/26/2015-04-26-%E4%BD%BF%E7%94%A8Flash%E6%8F%92%E4%BB%B6%E5%88%B6%E4%BD%9C%E5%85%B3%E5%8D%A1%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E4%BA%8C%EF%BC%89%E9%80%9A%E4%BF%A1%E4%B8%8EIO/"/>
-    <id>http://wonderdaystudio.com/2015/04/26/2015-04-26-%E4%BD%BF%E7%94%A8Flash%E6%8F%92%E4%BB%B6%E5%88%B6%E4%BD%9C%E5%85%B3%E5%8D%A1%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E4%BA%8C%EF%BC%89%E9%80%9A%E4%BF%A1%E4%B8%8EIO/</id>
+    <link href="http://wonderdaystudio.com/2015/04/25/2015-04-26-%E4%BD%BF%E7%94%A8Flash%E6%8F%92%E4%BB%B6%E5%88%B6%E4%BD%9C%E5%85%B3%E5%8D%A1%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E4%BA%8C%EF%BC%89%E9%80%9A%E4%BF%A1%E4%B8%8EIO/"/>
+    <id>http://wonderdaystudio.com/2015/04/25/2015-04-26-%E4%BD%BF%E7%94%A8Flash%E6%8F%92%E4%BB%B6%E5%88%B6%E4%BD%9C%E5%85%B3%E5%8D%A1%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E4%BA%8C%EF%BC%89%E9%80%9A%E4%BF%A1%E4%B8%8EIO/</id>
     <published>2015-04-26T06:21:51.000Z</published>
     <updated>2020-05-30T00:12:04.310Z</updated>
     
@@ -517,8 +544,8 @@
   
   <entry>
     <title>可视化有限状态机编辑器</title>
-    <link href="http://wonderdaystudio.com/2015/04/20/2015-04-20-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    <id>http://wonderdaystudio.com/2015/04/20/2015-04-20-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%E7%BC%96%E8%BE%91%E5%99%A8/</id>
+    <link href="http://wonderdaystudio.com/2015/04/19/2015-04-20-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <id>http://wonderdaystudio.com/2015/04/19/2015-04-20-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%E7%BC%96%E8%BE%91%E5%99%A8/</id>
     <published>2015-04-20T04:03:31.000Z</published>
     <updated>2020-05-30T00:13:00.709Z</updated>
     
@@ -594,39 +621,6 @@
       &lt;h1&gt;&lt;/h1&gt;
 &lt;p&gt;喝了一口茶，因为某个词的启发，思绪自由地伸展着。司磊准时出现了，他穿着便装，纯色的T恤和裤子，也没有佩戴任何首饰，很简单。这种再会的场面和我想象中的不差分毫。因为他是个不容易改变的人。&lt;/p&gt;
 &lt;p&gt;大学期间，司磊一直是我追随的对象，他的心理年龄比我大很多。我想，那是因为他的经历比我丰富，然而这又与他的不易改变相矛盾。所以有时我觉得我完全不了解这个人，交往得越深越能感受到这点。某个角落，任何角色都无法给予慰藉，所以人终究还是孤独的群居动物。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="writing" scheme="http://wonderdaystudio.com/categories/writing/"/>
-    
-    
-      <category term="writing" scheme="http://wonderdaystudio.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>选民</title>
-    <link href="http://wonderdaystudio.com/2014/10/10/2014-10-10-%E9%80%89%E6%B0%91/"/>
-    <id>http://wonderdaystudio.com/2014/10/10/2014-10-10-%E9%80%89%E6%B0%91/</id>
-    <published>2014-10-10T13:55:40.000Z</published>
-    <updated>2020-05-30T00:06:23.907Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1&gt;&lt;/h1&gt;
-&lt;p&gt;船稳稳地航行着，风和日丽，海鸥不时地落在栏杆上。水手们洗好了衣服，大多半裸着躺在甲板上晒太阳。&lt;/p&gt;
-&lt;p&gt;“天气真他妈好！”大胡子说了句，说的时候他那堆在一起的肚皮还一鼓一鼓的。&lt;/p&gt;
-&lt;p&gt;大伙一起跟着嘿嘿的笑着。忽然谁的肚子叫了，我发誓那是我听过的肚子所能发出的最响的声音了。昨天我也发过同样的誓，那是大胃托德一直在刷新他自己的记录的原因。&lt;/p&gt;
-&lt;p&gt;听到这个下厨信号的潘尼已经伸伸腰站起来了。他真是个好厨子，他做的菜好吃极了。&lt;/p&gt;
-&lt;p&gt;“好吧，说说你们想吃什么？”&lt;/p&gt;
-&lt;p&gt;“腊肠，猪排，鸡腿⋯⋯”大胃托德又开始重复他的梦幻菜单了。&lt;/p&gt;
-&lt;p&gt;“土豆和白菜你选哪个？”早就习惯了的潘尼根本不理会他。&lt;/p&gt;
-&lt;p&gt;“白菜！”几个人异口同声地答道。&lt;/p&gt;
-&lt;p&gt;“白菜，当然是白菜，又新鲜又有口感。”巴兹也发表了意见。&lt;/p&gt;
-&lt;p&gt;“可是土豆吃起来才更有味道吧？”黑狗持反对意见。&lt;/p&gt;
-&lt;p&gt;“嗯，土豆有利于我对肉类的幻想。”大胃托德也是土豆的拥护者。&lt;/p&gt;
-&lt;p&gt;“好吧，来投票吧！”&lt;/p&gt;
     
     </summary>
     
