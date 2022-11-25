@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "使用Flash插件制作关卡编辑器（二）通信与IO"
+title: "使用Flash制作关卡编辑器(2)"
+subtitle: "通信与IO"
 date: 2015-04-26 14:21:51 +0800
 comments: true
-categories: "tool"
-tags: ["javaScript", "AS3"]
+toc: true
+header-img: "/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg"
+categories: "coding"
+tags: ["tool"]
 ---
-<!-- toc -->
 #### AS3调用Flash javaScript API(JSAPI)命令
 
 [MMExecute](http://help.adobe.com/zh_CN/FlashPlatform/reference/actionscript/3/adobe/utils/package.html#MMExecute)函数正是我们需要的。
@@ -27,6 +29,8 @@ private function log(s:String):void
 如上所示，其实传参也不难，只需要注意转义就行了。
 
 同时，我们也看到了log的方法。因为只能在Flash中运行，所以AS3中的trace是看不到输出的，只有靠JSAPI的fl.trace才能在Flash的输出面板看到调试信息。
+
+<!--more-->
 
 通用通信方法：
 

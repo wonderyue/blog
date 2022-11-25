@@ -3,7 +3,8 @@ layout: post
 title: "嗯……"
 date: 2013-11-05 20:53:03 +0800
 comments: true
-categories: "doodle"
-tag: "doodle"
+categories: "drawing"
+tag: "drawing"
+header-img: "/img/header_img/darya-tryfanava-9Z_VwmBVYNY-unsplash.jpg"
 ---
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/小机器君.jpg)
+![enter image description here](小机器君.jpg)

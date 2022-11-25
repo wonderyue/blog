@@ -3,10 +3,11 @@ layout: post
 title: "动作游戏架构设计"
 date: 2015-05-07 22:17:19 +0800
 comments: true
-categories: "architecture"
-tags: ["architecture", "行为树", "碰撞检测"]
+toc: true
+header-img: "/img/header_img/ryan-quintal-Rt0fXXXvf4w-unsplash.jpg"
+categories: "coding"
+tags: ["game", "behavior tree"]
 ---
-<!-- toc -->
 完整设计并完成了一款2D横版动作游戏。对比刚入行时，现在做游戏架构设计，考虑最多的关键词是“解耦”，“数据驱动”，“自动化”。这次设计也是本着这样的原则。
 
 ## 打击判定
@@ -15,6 +16,8 @@ tags: ["architecture", "行为树", "碰撞检测"]
 - AABB：效率最高的方式，矩形间的碰撞检测，适用于效率要求高而精度要求不高的情况。
 - 像素级碰撞检测：精度最高的方式，基于像素值是否透明和交叠来检测，同样效率不高。
 对于动作游戏，当大量敌人，远程武器，技能满屏飞时不会比弹幕游戏对碰撞效率的要求低多少。这里采用AABB的方式，事实证明不影响体验，足以满足精度需求，而实际上很多经典的ACT甚至FTG也都是采用的这种方式。
+
+<!--more-->
 
 ### 2. boundingBox编辑：
 通过手写配置文件描述距离，范围固然也是可以实现的。但这和手写UI一样痛苦和不利于后续修改。论可视化编辑的必要性：
@@ -39,7 +42,7 @@ tags: ["architecture", "行为树", "碰撞检测"]
 - 跳转：两个状态间的有序连接。满足条件即从当前状态跳转至下一个状态。
 - 条件：跳转的条件，可包含多个。
 
-具体编辑器的实现可参考[这里](/2015/04/20/2015-04-20-可视化有限状态机编辑器/)。
+具体编辑器的实现可参考[这里](/blog/2015/04/20/2015-04-20-可视化有限状态机编辑器/)。
 
 ## AI
 
@@ -78,7 +81,7 @@ void eat(){
 
 答：不应该使用行为树，而是用动作状态机实现。
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/act01.png)
+![enter image description here](act01.png)
 
 float为浮空状态，hitWhileFloat是浮空中再次受到受击的状态。只要击中浮空中的敌人时给予hitWhileFloat信号，即可令敌人再次浮空。
 
@@ -88,7 +91,7 @@ float为浮空状态，hitWhileFloat是浮空中再次受到受击的状态。�
 
 ### 编辑器
 
-寻找开源行为树编辑器的可以参考[这里](/2015/04/22/2015-04-22-轻量级行为树编辑器/)。
+寻找开源行为树编辑器的可以参考[这里](/blog/2015/04/22/2015-04-22-轻量级行为树编辑器/)。
 
 最终导出json文件作为行为树的配置文件。这样的行为树编辑器与游戏的运行时是割离的，无法直观调试（参见unity的Behaviour Designer）。要做到联调还需要增加与游戏运行时的通信部分。这部分有时间可以考虑一下，也是个有趣的课题。
 
@@ -99,7 +102,7 @@ float为浮空状态，hitWhileFloat是浮空中再次受到受击的状态。�
 
 ### 数据索引
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/act02.png)
+![enter image description here](act02.png)
 
 简单串联一下攻击过程：
 

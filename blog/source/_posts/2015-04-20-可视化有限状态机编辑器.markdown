@@ -3,10 +3,11 @@ layout: post
 title: "可视化有限状态机编辑器"
 date: 2015-04-20 12:03:31 +0800
 comments: true
-categories: "tool"
-tags: ["Flex", "状态机"]
+toc: true
+header-img: "/img/header_img/animator.png"
+categories: "coding"
+tags: ["game", "tool"]
 ---
-<!-- toc -->
 用过Unity开发的工程师们一定对Mecanim的方便快捷印象深刻，用过之后再也不想回到刀耕火种的时代了。
 
 目前在做egret项目，首先就动手做了一个仿制Mecanim的FSM编辑器。工具做得越早，受益越多。
@@ -23,9 +24,11 @@ tags: ["Flex", "状态机"]
 
 - Parameter：参数。成员变量包含类型（bool，number，trigger，complete，其中complete相当于Mecanim中的exitTime，代表跳转条件为动画播放结束）
 
+<!--more-->
+
 #### 示例
 
- ![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/animator01.gif)
+ ![enter image description here](animator01.gif)
 
 导出json文件格式：
 
@@ -73,15 +76,15 @@ tags: ["Flex", "状态机"]
 
 首先导出egret格式的骨骼动画
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/animator02.png)
+![enter image description here](animator02.png)
 
 然后将skeleton.json文件丢入Animator中，（跟open是一个效果，两种方式任君选用），刚丢进去时应该是这样事儿的
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/animator03.png)
+![enter image description here](animator03.png)
 
 稍微编辑一下
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/animator04.png)
+![enter image description here](animator04.png)
 
 最后点击save，保存下来，放到工程资源目录下。
 

@@ -1,0 +1,10 @@
+---
+layout: post
+title: "小孟"
+date: 2022-11-14 23:39:23 +0800
+comments: true
+categories: "drawing"
+tag: "drawing"
+header-img: "/img/header_img/kate-trysh-tFwXDr9nViY-unsplash.jpg"
+---
+![enter image description here](小孟.png)

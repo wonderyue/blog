@@ -1,17 +1,19 @@
 ---
 layout: post
-title: "使用Flash插件制作关卡编辑器（三）补遗"
+title: "使用Flash制作关卡编辑器(3)"
+subtitle: "补遗"
 date: 2015-04-26 15:27:01 +0800
 comments: true
-categories: "tool"
-tags: ["AS3"]
+toc: true
+header-img: "/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg"
+categories: "coding"
+tags: ["tool"]
 ---
-<!-- toc -->
 ## Flash控件使用
 
 下面是我使用到的控件，可以参考一下：
 
-![控件参考](http://7xkn3f.com1.z0.glb.clouddn.com/stage03.png)
+![控件参考](stage03.png)
 
 ### DataGrid的使用
 
@@ -29,6 +31,8 @@ tags: ["AS3"]
 ```
 
 填入columns中不存在的key-value是不会显示的。
+
+<!--more-->
 
  3 样式修改
  

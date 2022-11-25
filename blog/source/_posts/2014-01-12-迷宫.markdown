@@ -3,7 +3,8 @@ layout: post
 title: "迷宫"
 date: 2014-01-12 12:43:27 +0800
 comments: true
-categories: "doodle"
-tag: "doodle"
+categories: "drawing"
+tag: "drawing"
+header-img: "/img/header_img/kate-trysh-tFwXDr9nViY-unsplash.jpg"
 ---
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/迷宫.jpg)
+![enter image description here](迷宫.jpg)

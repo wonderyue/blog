@@ -1,0 +1,133 @@
+---
+layout: post
+title: "Lua资料整理"
+date: 2018-01-24 12:02:02 +0800
+comments: true
+toc: true
+header-img: "/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg"
+categories: "coding"
+tags: ["lua"]
+---
+## 应用
+
+### 使用上的Tips:
+- Lua中除了nil和bool型的false，其余值的逻辑判断都为true，包括0。
+- Lua中异或和取反运算符都是“~”
+- 用local保存频繁使用的全局func会省去查找过程，提升效率。
+- 一个字符串有大量拼接操作时，一起拼接比一次次拼接高效；用table.insert，最后table.concat会比直接使用“..”拼接高效。
+- 尾部扩充table时，t[#t+1] = v要比table.insert(t,v)快一点。
+
+### 面向对象技巧：
+- metatables和metamethods是Lua实现多态的主要手段。
+- 运算符重载，只读等均可以通过metamethods实现：
+
+<!--more-->
+
+``` C++
+vmcase(OP_ADD) 
+{
+    TValue *rb = RKB(i);
+    TValue *rc = RKC(i);
+    lua_Number nb; lua_Number nc;
+    if (ttisinteger(rb) && ttisinteger(rc)) {
+      lua_Integer ib = ivalue(rb); lua_Integer ic = ivalue(rc);
+      setivalue(ra, intop(+, ib, ic));
+    }
+    else if (tonumber(rb, &nb) && tonumber(rc, &nc)) {
+      setfltvalue(ra, luai_numadd(L, nb, nc));
+    }
+    else { Protect(luaT_trybinTM(L, rb, rc, ra, TM_ADD)); }
+    vmbreak;
+}
+以加法指令为例，非值类型的‘+’会检查元表中是否定义了TM_ADD（"__add"）的元方法，如果有则使用。
+```
+
+```
+function readOnly (t)
+    local proxy = {}
+    local mt = {         -- create metatable
+       __index = t,
+       __newindex = function (t,k,v)
+           error("attempt to update a read-only table", 2)
+       end
+    }
+    setmetatable(proxy, mt)
+    return proxy
+end
+只读的实现如上，proxy是一张空表，访问任意key会转为访问__index，即正常读取了t中的value；
+而想要set时，则会触发__newindex报错。
+需要注意的是proxy可以正常的for...pairs/ipairs遍历，但#proxy等于0。
+因为前者会查找__index，而后者不会，如有需要可以定义__len。
+__len = function(a) return #getmetatable(a).__index; end
+```
+
+- 实现私有性的一种方法:
+
+```
+function TestObject (n, t)
+    local self = {
+        -- private members
+        name = n,
+        tag = t,
+    }
+    -- private function
+    self.Trace = function ()
+       print("name:"..self.name..",tag:"..self.tag);
+    end
+    -- public function
+    local Run = function ()
+        self.Trace();
+       print("run");
+    end
+ 
+    return {
+       Run = Run
+    }
+end
+```
+
+
+References：
+1. [Lua Style Guide](http://lua-users.org/wiki/LuaStyleGuide)
+2. [Lua Performance Tips](http://www.lua.org/gems/sample.pdf)
+3. [Programming in Lua](http://book.luaer.cn/)
+
+## 原理
+
+### Lua Value
+
+```
+typedef union Value {
+  GCObject *gc;    /* collectable objects */
+  void *p;         /* light userdata */
+  int b;           /* booleans */
+  lua_CFunction f; /* light C functions */
+  lua_Integer i;   /* integer numbers */
+  lua_Number n;    /* float numbers */
+} Value;
+```
+在5.3.4中，Value如上所示，多了lua_Integer，是一个宏定义，可以使用long long，即支持64位整形。同时在TValue中的type上也区分出了整数与浮点数。
+
+### Lua指令
+
+编译或反编译查看opcode的工具：
+
+- luac
+- [ChunkSpy](http://chunkspy.luaforge.net/)
+
+### 基于寄存器的虚拟机
+
+相比于基于堆栈的虚拟机
+- 指令更复杂，需要指定寄存器。↓
+- 相同逻辑，指令数更少，不需要大量push，pop操作。↓
+- 速度更快，同时实现更为复杂。
+
+其他
+
+- java虚拟机Dalvik也是基于寄存器的虚拟机。↓
+- 不同语境下，一个脚本语言的名字可能承载了很多不同概念，比如提到Lua，可能是指Lua语言，Lua解释器或Lua虚拟机。它们是一个整体，但不是不可替换的，就像java同时有jvm和Dalvik两种广泛应用的虚拟机。
+
+References：
+1. [The Implementation of Lua5.0](https://www.lua.org/doc/jucs05.pdf)
+2. [A No-Frills Intro To Lua5.1 VM Instructions](http://luaforge.net/docman/83/98/ANoFrillsIntroToLua51VMInstructions.pdf)
+    

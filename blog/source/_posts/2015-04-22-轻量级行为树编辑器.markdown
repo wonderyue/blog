@@ -3,23 +3,21 @@ layout: post
 title: "轻量级行为树编辑器"
 date: 2015-04-22 17:27:31 +0800
 comments: true
-categories: "tool"
-tags: ["javaScript", "行为树"]
+toc: true
+header-img: "/img/header_img/behaviortree.png"
+categories: "coding"
+tags: ["tool", "behavior tree"]
 ---
-<!-- toc -->
-首先介绍[renatopp](https://github.com/renatopp)编写的基于js的轻量级行为树编辑器behavior3js
 
-仓库地址：[https://github.com/behavior3/behavior3js.git](https://github.com/behavior3/behavior3js.git)
-
-在线编辑器地址： [http://editor.behavior3.com/](http://editor.behavior3.com/)
-
-在制作动作游戏时，需要一个轻量级可跨平台的行为树编辑器，有幸在github上找到了这个项目。因为是用js写的，跨平台不在话下，比起其他C++等项目配置，运行和修改也都要简单很多。
+在制作动作游戏时，需要一个轻量级可跨平台的行为树编辑器，有幸在github上找到了[behavior3js](https://github.com/behavior3/behavior3editor)这个项目。因为是用js写的，跨平台不在话下，比起其他C++等项目配置，运行和修改也都要简单很多。
 
 先看看编辑器的外表
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/bt01.png)
+![enter image description here](bt01.png)
 
 基本编辑，导入，导出功能都已经很完备了，只需稍加修改即可应用在自己的项目中了。
+
+<!--more-->
 
 ### Add custom node 增加自定义节点
 在helpers.js中加入如下代码
@@ -83,7 +81,7 @@ app.helpers.addEditNodeParameterRow = function(table, key, value) {
 ```
 这样我们就可以自定义节点的名称（对应类名）和标题（用于显示），并可以增加任意数量的参数，如下图所示：
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/bt02.png)
+![enter image description here](bt02.png)
 
 ### Save and read custom nodes 存取自定义节点
 
@@ -177,7 +175,7 @@ app.helpers.updateNodes();
 
 这样每次初始化都会调用导入方法，把我们之前保存的自定义的节点加载进来。下面给出个最终效果图：
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/bt03.png)
+![enter image description here](bt03.png)
 
 可以看到右侧还添加了说明，方便交给策划使用。
 

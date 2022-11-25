@@ -3,10 +3,11 @@ layout: post
 title: "做一个简单的iOS应用"
 date: 2015-09-02 22:12:33 +0800
 comments: true
-categories: "app"
-tags: ["iOS", "app", "StoryBoard"]
+toc: true
+header-img: "/img/header_img/rami-al-zayat-w33-zg-dNL4-unsplash.jpg"
+categories: "coding"
+tags: ["mobile"]
 ---
-<!-- toc -->
 想做一款iOS应用练练手，简单考察了一下，做天气或备忘录未免太简单，太复杂的又不适合练手，最终锁定了“历史上的今天”的展示应用，会涉及到网络请求，网络图片加载，TableView，WebView等，难度适中，开整。
 
 # 工具
@@ -34,6 +35,8 @@ tags: ["iOS", "app", "StoryBoard"]
 * SDWebImage
 * Bmob（这个后面细说）
 
+<!--more-->
+
 ## Sketch
 
 爱不释手的矢量设计软件，制作icon全靠它了。
@@ -50,7 +53,7 @@ tags: ["iOS", "app", "StoryBoard"]
 
 最终策略如下:
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/app01.png)
+![enter image description here](app01.png)
 
 # 美化
 
@@ -93,8 +96,8 @@ stringByEvaluatingJavaScriptFromString:(NSString *)script
 
 get代码后，只需要在storyboard中选择custom，指定BlurryModalSegue即可：
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/app02.png)
+![enter image description here](app02.png)
 
 看看效果吧：
 
-![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/41.png) ![enter image description here](http://7xkn3f.com1.z0.glb.clouddn.com/42.png)
+![enter image description here](41.png) ![enter image description here](42.png)

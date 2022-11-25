@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "使用Flash插件制作关卡编辑器（一）分析和准备"
+title: "使用Flash制作关卡编辑器(1)"
+subtitle: "分析和准备"
 date: 2015-04-25 17:27:31 +0800
 comments: true
-categories: "tool"
-tags: ["javaScript", "AS3"]
+toc: true
+header-img: "/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg"
+categories: "coding"
+tags: ["tool"]
 ---
-<!-- toc -->
 ### 功能描述
 - 在Flash CS中通过元件拖拽完成场景中背景，装饰物，主角，敌人等元素的布置
 - 通过jsfl完成元件信息解析，并传递给AS做进一步处理（关键）
@@ -15,17 +17,19 @@ tags: ["javaScript", "AS3"]
 
 布置场景：
     
-![布置场景](http://7xkn3f.com1.z0.glb.clouddn.com/stage01.png)
+![布置场景](stage01.png)
 
 插件面板：
 
-![插件面板](http://7xkn3f.com1.z0.glb.clouddn.com/stage02.png)
+![插件面板](stage02.png)
 
 ### jsfl准备
 
 jsfl——Flash Javascript，运行在Flash环境下的脚本，可以实现很多自动化操作，如批量命名，修改元件属性等。
 
 jsfl用很多实用的方法，可参见[官方文档](http://help.adobe.com/zh_CN/flash/cs/extend/flash_cs5_extending.pdf)。这里只介绍我们需要用到的方法。
+
+<!--more-->
 
 ##### 1. 遍历库元件
 

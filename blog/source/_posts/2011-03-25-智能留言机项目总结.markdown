@@ -3,10 +3,11 @@ layout: post
 title: "智能留言机项目总结"
 date: 2011-03-25 15:33:09 +0800
 comments: true
-categories: ""
-tags: ["C", "FPGA"]
+toc: true
+header-img: "/img/header_img/michael-dziedzic--Rc6usOigMk-unsplash.jpg"
+categories: "coding"
+tags: ["FPGA"]
 ---
-<!-- toc -->
 回头想想，参加全国研究生电子设计大赛可能是研究生期间最重要的收获了。从组队，立项到执行，一路遇到不少困难，又一一化解，值得庆幸。遂将所遇问题简单记录。
 
 ## 基本环境
@@ -26,6 +27,8 @@ tags: ["C", "FPGA"]
 
 ### 总结
 空间换时间。
+
+<!--more-->
 
 ## 图像采样
 ### 问题

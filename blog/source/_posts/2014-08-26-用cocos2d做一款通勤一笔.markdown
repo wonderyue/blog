@@ -3,17 +3,18 @@ layout: post
 title: "用cocos2d做一款通勤一笔"
 date: 2014-08-26 22:09:12 +0800
 comments: true
-categories: "game"
-tags: ["cocos2d-x", "game"]
+toc: true
+header-img: "/img/header_img/julian-christian-anderson-_y0tTb95xeY-unsplash.jpg"
+categories: "coding"
+tags: ["game"]
 ---
-<!-- toc -->
 最早在GBA上玩过《通勤一笔》，是一款很棒的益智游戏。基本玩法为：
 
 矩阵中有黑白两色方块，通过画线（只可横竖，不可斜向）可以将划过方块翻转，横行颜色相同即可消除，全部消除即可通关。为什么叫“通勤一笔”呢？因为只能画一笔。
 
-![](http://7xkn3f.com1.z0.glb.clouddn.com/bow01.jpeg)![二维码](http://7xkn3f.com1.z0.glb.clouddn.com/黑白一笔翻.png)
+![](bow01.jpeg)
 
-下载地址扫二维码或者戳[这里](http://pmoc49a6179.isitestar.cn/?from=timeline&isappinstalled=1)，实践过程如下：
+实践过程如下：
 
 ## 格子
 
@@ -26,6 +27,8 @@ tags: ["cocos2d-x", "game"]
 还有一种附加状态就是被画线，线显示在最上层。
 
 格子包含方块的引用，同时作为画线控制的接受对象，而方块只用来显示。
+
+<!--more-->
 
 ## 方块
 
@@ -45,7 +48,7 @@ tags: ["cocos2d-x", "game"]
 
 当遇到无法消除的横行时，该横行会渐变为红色，传达给玩家信息：该行无法消除。
 
-![](http://7xkn3f.com1.z0.glb.clouddn.com/bow06.gif)
+![](bow06.gif)
 
 ## 画线
 
@@ -77,7 +80,7 @@ tags: ["cocos2d-x", "game"]
 
 只需要四个状态即可，其他状态可以用这四个状态的水平或竖直翻转即可。
 
-1.![line](http://7xkn3f.com1.z0.glb.clouddn.com/line0.png)　　2.![line](http://7xkn3f.com1.z0.glb.clouddn.com/line1.png)　　3.![line](http://7xkn3f.com1.z0.glb.clouddn.com/line2.png)　　4.![line](http://7xkn3f.com1.z0.glb.clouddn.com/line3.png)
+1.![line](line0.png)　　2.![line](line1.png)　　3.![line](line2.png)　　4.![line](line3.png)
 
 ## 数据
 
@@ -109,9 +112,6 @@ tags: ["cocos2d-x", "game"]
 
 ### SDK
 接入了友盟，ktplay，微信（英文版接入了Facebook），芒果广告。
-
-### 主页
-使用[建站之星](http://www.sitestar.cn/member/login.aspx)快速制作了游戏主页，罗列了各平台入口。建站之星可以轻松的为移动端和PC端定制不同样式，作为一个免费使用者，帮着打打广告。
 
 ### WindowsPhone
 使用代理来完成C++与C#交互，接入了支付和微软广告。

@@ -3,10 +3,11 @@ layout: post
 title: "做一个Sublime的Hexo插件"
 date: 2015-08-19 17:17:19 +0800
 comments: true
-categories: "tool"
-tags: ["hexo", "sublime", "python"]
+toc: true
+header-img: "/img/header_img/markus-spiske-Skf7HxARcoc-unsplash.jpg"
+categories: "coding"
+tags: ["tool"]
 ---
-<!-- toc -->
 [Hexo](https://hexo.io/)是款很适合程序猿使用的博客框架，同octopress一样使用markdown编写博文，不同的是采用node.js来生成静态网页，速度更快。
 
 Markdown的编辑器也有很多，[Mou](http://25.io/mou/)就是一个很好的选择。还有在线编辑器，如[马克飞象](http://www.maxiang.info/)。当然，忽略实时预览的话，任何文本编辑器也是都可以胜任的，比如[Sublime](http://www.sublimetext.com/)。为了更加肆意地懒惰，决定开发一个对应Hexo的Sublime插件。
@@ -18,6 +19,9 @@ Markdown的编辑器也有很多，[Mou](http://25.io/mou/)就是一个很好的
 * Preferences -> Browse Packages... 新建目录，用来存放我们的插件，这里就叫做BlogAssistant
 * Tools->New Plugin... 创建新的插件，命名为BlogAssistant.py保存在之前的文件夹下
 * ctrl+`打开控制台，输入view.run_command('example')，如果当前文档前插入了"Hello, World!"则表明创建成功
+
+
+<!--more-->
 
 ## 设置快捷键
 
@@ -47,13 +51,13 @@ class BlogPusherPreviewCommand(sublime_plugin.TextCommand):
 
 ```
 {
-    "blog_path": "/Users/yuewenduo/Documents/Workspace/Hexo/blog"
+    "blog_path": "your_blog_path"
 }
 ```
 
 ### 读取
 
-```
+```python
 def loadSettings(name):
     return sublime.load_settings(name+".sublime-settings")
 ```
@@ -63,7 +67,7 @@ def loadSettings(name):
 使用命令[subprocess.Popen](https://docs.python.org/2/library/subprocess.html)来调用shell，比如：
 
 
-```
+```python
 process = subprocess.Popen("ls -l", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 for line in process.stdout.readlines():
 	print line
@@ -72,7 +76,7 @@ for line in process.stdout.readlines():
 ### 发布
 
 
-看起来很简单是不是？那我们马上试试H调用exo的deploy命令吧。
+看起来很简单是不是？那我们马上试试调用Hexo的deploy命令吧。
 
 ```
 process = subprocess.Popen("hexo d", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -99,8 +103,8 @@ for line in process.stdout.readlines():
 
 ```
 [user]  
-        name = yourname  
-        email = youemail@gmail.com
+name = yourname  
+email = youremail@gmail.com
 ```
 从而又省去了在python环境下调用"git config --global"的过程，懒就要懒到底。
 
@@ -118,7 +122,7 @@ for line in process.stdout.readlines():
 
 方法如下：
 
-```
+```python
 def kill(pid):
     try:
         a = os.kill(pid, signal.SIGKILL)
@@ -136,7 +140,7 @@ def try_kill_process():
 
 下面直接给出最终的预览功能代码：
 
-```
+```python
 class BlogAssistantPreviewCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		try_kill_process()
