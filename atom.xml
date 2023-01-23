@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Wondery</title>
-  <icon>http://wonderdaystudio.com/img/favicon.png.png</icon>
+  <icon>http://wonderdaystudio.com/img/favicon.png</icon>
   <subtitle>塗鴉兒童</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;小孟.png&quot; alt=&quot;enter image description
+          &lt;p&gt;&lt;img src=&quot;%E5%B0%8F%E5%AD%9F.png&quot; alt=&quot;enter image description
         
       
     
