@@ -9,7 +9,14 @@
 
     <url>
         <loc>http://wonderdaystudio.com/categories/drawing/</loc>
-        <lastmod>2022-11-25T04:53:50.936Z</lastmod>
+        <lastmod>2023-02-20T07:21:31.190Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wonderdaystudio.com/categories/coding/</loc>
+        <lastmod>2023-02-20T07:18:41.279Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -17,13 +24,6 @@
     <url>
         <loc>http://wonderdaystudio.com/categories/writing/</loc>
         <lastmod>2020-05-30T18:40:21.782Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wonderdaystudio.com/categories/coding/</loc>
-        <lastmod>2020-05-30T18:14:58.821Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

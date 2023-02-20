@@ -9,7 +9,15 @@
 
     <url>
         <loc>http://wonderdaystudio.com/2022/11/14/2022-11-14-%E5%B0%8F%E5%AD%9F/</loc>
-        <lastmod>2022-11-25T04:53:50.936Z</lastmod>
+        <lastmod>2023-02-20T07:21:31.190Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://wonderdaystudio.com/2023/02/15/2023-02-15-How%20to%20implement%20a%20zombie%20sniper%20gameplay%20based%20on%20UE/</loc>
+        <lastmod>2023-02-20T07:18:41.279Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
