@@ -39,11 +39,23 @@ categories:
 
 works:
   # ---------------------------------------------------------------- shipped
+  - title: "LAST SENTINEL"
+    category: shipped
+    cover: /img/lastsentinel.png
+    summary: A narrative-focused, open-world TPS set decades from now in a reconstructed Tokyo
+    badge: In Development
+    tags:
+      - UE5
+      - Open World
+      - TPS
+    links:
+      - label: Official Site
+        url: https://lastsentinelgame.com/
+
   - title: "League of Legends: Wild Rift"
     category: shipped
     cover: /img/wr.png
     summary: MOBA game based on Unity
-    featured: true
     tags:
       - Unity
       - C#
@@ -183,32 +195,23 @@ works:
         url: https://github.com/wonderyue/RayTracing
 
   # --------------------------------------------------------------- drawings
-  # Titles here were inferred from the file names -- correct anything that is
-  # wrong, and fill in the two that are still untitled.
-  - title: Darkest Hour
-    category: drawing
+  - category: drawing
     cover: /img/DarkestHour.png
 
-  - title: 杂念
-    category: drawing
+  - category: drawing
     cover: /img/杂念.jpg
 
-  - title: ""
-    category: drawing
+  - category: drawing
     cover: /img/10.jpg
 
-  - title: ""
-    category: drawing
+  - category: drawing
     cover: /img/4-4.jpg
 
-  - title: 炼
-    category: drawing
+  - category: drawing
     cover: /img/炼.jpg
 
-  - title: 迷宫
-    category: drawing
+  - category: drawing
     cover: /img/迷宫.jpg
 
-  - title: 小机器君
-    category: drawing
+  - category: drawing
     cover: /img/小机器君.jpg
