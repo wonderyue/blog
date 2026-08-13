@@ -1,0 +1,171 @@
+---
+layout: layout
+---
+<%
+  var data       = site.data.portfolio || {};
+  var works      = data.works || [];
+  var categories = data.categories || [];
+
+  function categoryOf(id) {
+    for (var i = 0; i < categories.length; i++) {
+      if (categories[i].id === id) return categories[i];
+    }
+    return null;
+  }
+
+  function label(id) {
+    var cat = categoryOf(id);
+    return cat ? cat.label : id;
+  }
+
+  // One section per category, in the order the data file lists them.
+  // Categories with nothing in them are skipped.
+  var sections = categories.map(function (cat) {
+    return {
+      id: cat.id,
+      label: cat.label,
+      display: cat.display || 'cards',
+      items: works.filter(function (w) { return w.category === cat.id; })
+    };
+  }).filter(function (s) { return s.items.length > 0; });
+%>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 post-container portfolio-container">
+
+            <% sections.forEach(function (section) { %>
+            <section class="pf-section" id="<%= section.id %>">
+                <h2 class="pf-section-title"><%= section.label %></h2>
+
+                <% if (section.display === 'gallery') { %>
+                <div class="pf-gallery">
+                    <% section.items.forEach(function (w) { %>
+                    <figure class="pf-shot">
+                        <button class="pf-shot-btn" type="button"
+                                aria-label="<%= w.title ? 'Enlarge ' + w.title : 'Enlarge image' %>">
+                            <img src="<%= url_for(w.cover) %>"
+                                 alt="<%= w.title || label(w.category) %>"
+                                 loading="lazy"
+                                 decoding="async"
+                                 data-zoom="<%= url_for(w.cover) %>"
+                                 data-caption="<%= w.title || '' %>">
+                        </button>
+                        <% if (w.title) { %>
+                        <figcaption><%= w.title %></figcaption>
+                        <% } %>
+                    </figure>
+                    <% }); %>
+                </div>
+
+                <% } else if (section.display === 'list') { %>
+                <ul class="pf-list">
+                    <% section.items.forEach(function (w) {
+                         var links = w.links || []; %>
+                    <li class="pf-row">
+                        <% if (w.cover) { %>
+                        <span class="pf-row-thumb">
+                            <img src="<%= url_for(w.cover) %>" alt="" loading="lazy" decoding="async" onerror="this.remove()">
+                        </span>
+                        <% } else { %>
+                        <span class="pf-row-thumb is-empty" aria-hidden="true"></span>
+                        <% } %>
+
+                        <span class="pf-row-text">
+                            <span class="pf-row-title"><%= w.title %></span>
+                            <% if (w.summary) { %>
+                            <span class="pf-row-summary"><%= w.summary %></span>
+                            <% } %>
+                        </span>
+
+                        <% if (links.length) { %>
+                        <span class="pf-row-links">
+                            <% links.forEach(function (l) { %>
+                            <a href="<%= l.url %>" target="_blank" rel="noopener noreferrer"><%= l.label %></a>
+                            <% }); %>
+                        </span>
+                        <% } %>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <% } else { %>
+                <div class="pf-grid">
+                    <% section.items.forEach(function (w) {
+                         var links   = w.links || [];
+                         var tags    = w.tags || [];
+                         var classes = ['pf-card'];
+                         if (w.featured) classes.push('is-featured');
+                    %>
+                    <article class="<%= classes.join(' ') %>">
+                        <div class="pf-cover">
+                            <% if (w.badge) { %>
+                            <span class="pf-badge"><%= w.badge %></span>
+                            <% } %>
+                            <!-- Sits behind the cover; shows through if the image 404s. -->
+                            <span class="pf-cover-fallback"><%= w.title || label(w.category) %></span>
+                            <img src="<%= url_for(w.cover) %>"
+                                 alt="<%= w.title || label(w.category) %>"
+                                 loading="lazy"
+                                 decoding="async"
+                                 onerror="this.remove()"
+                                 data-zoom="<%= url_for(w.cover) %>"
+                                 data-caption="<%= w.title || '' %>">
+                            <button class="pf-zoom" type="button"
+                                    aria-label="<%= w.title ? 'Enlarge ' + w.title : 'Enlarge image' %>"></button>
+                        </div>
+
+                        <div class="pf-body">
+                            <% if (w.title) { %>
+                            <h3 class="pf-title"><%= w.title %></h3>
+                            <% } %>
+
+                            <% if (w.summary) { %>
+                            <p class="pf-summary"><%= w.summary %></p>
+                            <% } %>
+
+                            <% if (tags.length) { %>
+                            <ul class="pf-tags">
+                                <% tags.forEach(function (t) { %>
+                                <li><%= t %></li>
+                                <% }); %>
+                            </ul>
+                            <% } %>
+
+                            <% if (links.length) { %>
+                            <div class="pf-links">
+                                <% links.forEach(function (l, j) { %>
+                                <a class="pf-link<%= j === 0 ? ' is-primary' : '' %>"
+                                   href="<%= l.url %>" target="_blank" rel="noopener noreferrer"><%= l.label %></a>
+                                <% }); %>
+                            </div>
+                            <% } %>
+                        </div>
+                    </article>
+                    <% }); %>
+                </div>
+                <% } %>
+            </section>
+            <% }); %>
+
+            <% if (page.content) { %>
+            <section class="pf-section pf-prose zh">
+                <%- page.content %>
+            </section>
+            <% } %>
+
+        </div>
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div class="pf-lightbox" id="pf-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image viewer">
+    <button class="pf-lb-close" type="button" aria-label="Close">&times;</button>
+    <button class="pf-lb-nav is-prev" type="button" aria-label="Previous image">&#8249;</button>
+    <button class="pf-lb-nav is-next" type="button" aria-label="Next image">&#8250;</button>
+    <figure class="pf-lb-stage">
+        <img id="pf-lb-img" src="" alt="">
+        <figcaption id="pf-lb-caption"></figcaption>
+    </figure>
+</div>
+
+<%- js('js/portfolio') %>

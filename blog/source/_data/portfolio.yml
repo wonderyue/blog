@@ -1,0 +1,214 @@
+# Portfolio content.
+#
+# /portfolio/ is generated from this file -- add a work here and it shows up,
+# no HTML to touch. The page renders one section per entry in `categories`,
+# in the order they appear below; a category with no works is skipped.
+#
+# Per work:
+#   title     required for everything except drawings
+#   category  must match an id in `categories`
+#   cover     path under source/  (cards crop to 16:9, so wide images work best)
+#   summary   one line under the title
+#   tags      small pills on the card -- engine, language, platform, role
+#   links     any number; the first one is the card's primary button
+#   featured  true = card spans two columns on wide screens; use it sparingly
+#   badge     small flag on the cover corner, e.g. "Coming 2027"
+#
+# In a `display: list` category, `cover` is optional and `tags`/`featured`/
+# `badge` are ignored -- rows only show thumbnail, title, summary and links.
+
+# `display` controls how a category is laid out:
+#   (default)  cards  -- cover cropped to 16:9, title, summary, tags, links
+#   list       compact rows: small or no thumbnail, name, one line, links.
+#              For side projects that look overweight as full cards.
+#   gallery    masonry columns at the image's own aspect ratio, no card frame.
+#              For artwork, which must not be cropped to a fixed shape.
+#
+# Section order on the page is the order of this list.
+categories:
+  - id: shipped
+    label: Work
+  - id: indie
+    label: Indie Games
+  - id: tool
+    label: Tools & Experiments
+    display: list
+  - id: drawing
+    label: Drawings
+    display: gallery
+
+works:
+  # ---------------------------------------------------------------- shipped
+  - title: "League of Legends: Wild Rift"
+    category: shipped
+    cover: /img/wr.png
+    summary: MOBA game based on Unity
+    featured: true
+    tags:
+      - Unity
+      - C#
+      - MOBA
+    links:
+      - label: App Store
+        url: https://apps.apple.com/app/id1480616990
+
+  - title: Moonlight Blade Mobile
+    category: shipped
+    cover: /img/td.png
+    summary: MMORPG game based on Unity
+    tags:
+      - Unity
+      - C#
+      - MMORPG
+    links:
+      - label: App Store
+        url: https://apps.apple.com/cn/app/id1438499417
+
+  # ------------------------------------------------------------------ indie
+  - title: Code Alone
+    category: indie
+    cover: /img/codealone.jpg
+    summary: A programming puzzle game where you play a gameplay programmer, writing code to build the core mechanics of a wide variety of games
+    badge: Coming 2027
+    featured: true
+    tags:
+      - Simulation
+      - Programming
+      - Puzzle
+    links:
+      - label: Steam
+        url: https://store.steampowered.com/app/4827900/Code_Alone/
+
+  - title: PuzzleSquare
+    category: indie
+    cover: /img/puzzlesquare.jpg
+    summary: A Chinese traditional ink-style puzzle game
+    tags:
+      - Puzzle
+      - 2D
+    links:
+      - label: Steam
+        url: https://store.steampowered.com/app/2472200/PuzzleSquare
+
+  - title: Last Wall
+    category: indie
+    cover: /img/lastwall.jpg
+    summary: A turn-based roguelike tactics game -- hold the wall against everything that comes
+    featured: true
+    tags:
+      - Roguelike
+      - Turn-Based
+      - Tactics
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/last-wall
+
+  - title: CatMatchRush
+    category: indie
+    cover: /img/catmatch.jpg
+    summary: A timed cat-matching puzzle -- chain swipes to clear quests before the clock runs out
+    tags:
+      - Puzzle
+      - Matching
+      - Casual
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/catmatchrush
+
+  - title: PuzzleCube
+    category: indie
+    cover: /img/puzzlecube.png
+    summary: Puzzle game based on Unity
+    tags:
+      - Unity
+      - Puzzle
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/puzzlecube
+
+  - title: Nightmare Dungeon
+    category: indie
+    cover: /img/dungeon.jpg
+    summary: Roguelike game based on Unity
+    tags:
+      - Unity
+      - Roguelike
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/nightmare-dungeon
+
+  # ------------------------------------------------------------------ tools
+  - title: Go2ShellAppleScript
+    category: tool
+    cover: /img/app.png
+    summary: Open a terminal window to the current directory in Finder by a simple click
+    tags:
+      - AppleScript
+      - macOS
+    links:
+      - label: GitHub
+        url: https://github.com/wonderyue/Go2ShellAppleScript
+
+  - title: OldSchoolFilter
+    category: tool
+    cover: /img/filter.jpg
+    summary: A static photo filter website based on React
+    tags:
+      - React
+      - WebGL
+    links:
+      - label: GitHub
+        url: https://github.com/wonderyue/OldSchoolFilter
+
+  - title: TinyJVM
+    category: tool
+    cover: /img/jvm.png
+    summary: A Java virtual machine implemented in Python
+    tags:
+      - Python
+      - JVM
+    links:
+      - label: GitHub
+        url: https://github.com/wonderyue/TinyJVM
+
+  - title: RayTracing
+    category: tool
+    cover: /img/ray.jpg
+    summary: A ray tracing renderer
+    tags:
+      - C++
+      - Rendering
+    links:
+      - label: GitHub
+        url: https://github.com/wonderyue/RayTracing
+
+  # --------------------------------------------------------------- drawings
+  # Titles here were inferred from the file names -- correct anything that is
+  # wrong, and fill in the two that are still untitled.
+  - title: Darkest Hour
+    category: drawing
+    cover: /img/DarkestHour.png
+
+  - title: 杂念
+    category: drawing
+    cover: /img/杂念.jpg
+
+  - title: ""
+    category: drawing
+    cover: /img/10.jpg
+
+  - title: ""
+    category: drawing
+    cover: /img/4-4.jpg
+
+  - title: 炼
+    category: drawing
+    cover: /img/炼.jpg
+
+  - title: 迷宫
+    category: drawing
+    cover: /img/迷宫.jpg
+
+  - title: 小机器君
+    category: drawing
+    cover: /img/小机器君.jpg

@@ -5,6 +5,15 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "scripts": {
+    "hexo": "node -r ./tools/node-compat.js ./node_modules/hexo/bin/hexo",
+    "clean": "npm run hexo -- clean",
+    "build": "npm run hexo -- generate",
+    "server": "npm run hexo -- server",
+    "verify": "node tools/verify-build.js",
+    "predeploy": "npm run verify",
+    "deploy": "npm run hexo -- deploy"
+  },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-deployer-git": "^2.1.0",
