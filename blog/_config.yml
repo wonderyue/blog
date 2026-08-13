@@ -182,5 +182,5 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/wonderyue/wondery.git
+  repository: git@github.com:wonderyue/blog.git
   branch: gh-pages
