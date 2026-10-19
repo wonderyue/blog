@@ -1,7 +1,41 @@
 .portfolio-container {
   padding-right: 0 !important;
 }
+.intro-header .site-heading {
+  padding: 100px 0 66px;
+}
+.intro-header .site-heading h1 {
+  font-size: 56px;
+}
+.pf-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  padding: 12px 0 24px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.09);
+}
+.pf-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #404040;
+  text-decoration: none !important;
+  padding: 8px 0;
+}
+.pf-nav a:hover {
+  color: #0085a1;
+}
+.pf-nav a:focus-visible {
+  outline: 2px solid #0085a1;
+  outline-offset: 4px;
+}
+.pf-nav span {
+  margin-left: 5px;
+  color: #666;
+  font-weight: 400;
+}
 .pf-section {
+  scroll-margin-top: 76px;
   margin-bottom: 54px;
 }
 .pf-section:last-child {
@@ -15,7 +49,7 @@
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #909090;
+  color: #666;
 }
 .pf-grid {
   display: grid;
@@ -123,7 +157,7 @@
   margin: 0;
   font-size: 14px;
   line-height: 1.55;
-  color: #909090;
+  color: #666;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -141,7 +175,7 @@
   font-size: 11.5px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #909090;
+  color: #666;
   border: 1px solid rgba(0,0,0,0.09);
   border-radius: 3px;
   padding: 3px 7px;
@@ -206,7 +240,7 @@
 }
 .pf-shot figcaption {
   font-size: 13px;
-  color: #909090;
+  color: #666;
   padding: 7px 2px 0;
 }
 .pf-list {
@@ -260,7 +294,7 @@
   display: block;
   font-size: 13px;
   line-height: 1.5;
-  color: #909090;
+  color: #666;
   margin-top: 2px;
 }
 .pf-row-links {
@@ -286,7 +320,7 @@
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #909090;
+  color: #666;
 }
 .pf-lightbox {
   position: fixed;
@@ -371,6 +405,18 @@
   display: none;
 }
 @media (max-width: 767px) {
+  .portfolio-container {
+    padding-right: 15px !important;
+  }
+  .intro-header .site-heading {
+    padding: 90px 0 40px;
+  }
+  .intro-header .site-heading h1 {
+    font-size: 40px;
+  }
+  .pf-nav {
+    gap: 4px 18px;
+  }
   .pf-grid {
     grid-template-columns: 1fr;
     gap: 20px;
