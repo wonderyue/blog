@@ -159,6 +159,17 @@ works:
       - label: itch.io
         url: https://wenduoyue.itch.io/nightmare-dungeon
 
+  - title: Fiction
+    category: indie
+    cover: /img/fiction.jpg
+    summary: Narrative
+    tags:
+      - Unity
+      - HTML5
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/fiction
+
   # ------------------------------------------------------------------ tools
   - title: Go2ShellAppleScript
     category: tool
