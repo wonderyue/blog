@@ -33,6 +33,13 @@ layout: layout
     <div class="row">
         <div class="col-lg-10 col-lg-offset-1 col-md-12 post-container portfolio-container">
 
+            <nav class="pf-nav" aria-label="Portfolio sections">
+                <% sections.forEach(function (section) { %>
+                <a href="#<%= section.id %>"><%= section.label %> <span><%= section.items.length %></span></a>
+                <% }); %>
+                <% if (page.content) { %><a href="#writings">Writings</a><% } %>
+            </nav>
+
             <% sections.forEach(function (section) { %>
             <section class="pf-section" id="<%= section.id %>">
                 <h2 class="pf-section-title"><%= section.label %></h2>
@@ -148,7 +155,7 @@ layout: layout
             <% }); %>
 
             <% if (page.content) { %>
-            <section class="pf-section pf-prose zh">
+            <section class="pf-section pf-prose zh" id="writings">
                 <%- page.content %>
             </section>
             <% } %>

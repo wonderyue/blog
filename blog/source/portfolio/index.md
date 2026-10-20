@@ -1,7 +1,7 @@
 ---
 layout: "portfolio"
 title: "Portfolio"
-description: ""
+description: "Games, experiments & other things I make."
 header-img: "img/header_img/GIG.jpg"
 ---
 

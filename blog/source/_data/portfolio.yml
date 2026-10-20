@@ -77,12 +77,23 @@ works:
         url: https://apps.apple.com/cn/app/id1438499417
 
   # ------------------------------------------------------------------ indie
+  - title: SelfRunner
+    category: indie
+    cover: https://img.itch.zone/aW1nLzMwODk3NDIyLnBuZw==/original/uchRkP.png
+    summary: Self-modifying code — three instructions and at most six lines create complex behavior at runtime
+    tags:
+      - Programming
+      - Puzzle
+      - Unity
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/selfrunner
+
   - title: Code Alone
     category: indie
     cover: /img/codealone.jpg
     summary: A programming puzzle game where you play a gameplay programmer, writing code to build the core mechanics of a wide variety of games
     badge: Coming 2027
-    featured: true
     tags:
       - Simulation
       - Programming
@@ -106,7 +117,6 @@ works:
     category: indie
     cover: /img/lastwall.jpg
     summary: A turn-based roguelike tactics game -- hold the wall against everything that comes
-    featured: true
     tags:
       - Roguelike
       - Turn-Based

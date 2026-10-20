@@ -3,14 +3,44 @@
 
 $accent = #0085a1
 $ink = #404040
-$muted = #909090
+$muted = #666
 $line = rgba(0,0,0,0.09)
 
 .portfolio-container
   padding-right: 0 !important
 
+// This stylesheet is only loaded by the portfolio layout.
+.intro-header .site-heading
+  padding: 100px 0 66px
+  h1
+    font-size: 56px
+
+.pf-nav
+  display: flex
+  flex-wrap: wrap
+  gap: 10px 24px
+  padding: 12px 0 24px
+  margin-bottom: 20px
+  border-bottom: 1px solid $line
+  a
+    font-size: 14px
+    font-weight: 600
+    color: $ink
+    text-decoration: none !important
+    padding: 8px 0
+    &:hover
+      color: $accent
+    &:focus-visible
+      outline: 2px solid $accent
+      outline-offset: 4px
+  span
+    margin-left: 5px
+    color: $muted
+    font-weight: 400
+
 // --------------------------------------------------------------- sections
 .pf-section
+  scroll-margin-top: 76px
   margin-bottom: 54px
   &:last-child
     margin-bottom: 20px
@@ -375,6 +405,14 @@ $line = rgba(0,0,0,0.09)
 
 // ------------------------------------------------------------- responsive
 @media (max-width: 767px)
+  .portfolio-container
+    padding-right: 15px !important
+  .intro-header .site-heading
+    padding: 90px 0 40px
+    h1
+      font-size: 40px
+  .pf-nav
+    gap: 4px 18px
   .pf-grid
     grid-template-columns: 1fr
     gap: 20px
