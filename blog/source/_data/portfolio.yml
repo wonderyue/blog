@@ -43,7 +43,6 @@ works:
     category: shipped
     cover: /img/lastsentinel.png
     summary: A narrative-focused, open-world TPS set decades from now in a reconstructed Tokyo
-    badge: In Development
     tags:
       - UE5
       - Open World
@@ -77,6 +76,39 @@ works:
         url: https://apps.apple.com/cn/app/id1438499417
 
   # ------------------------------------------------------------------ indie
+  - title: LuckyMachine
+    category: indie
+    cover: https://img.itch.zone/aW1nLzMyMjA5MjY2LnBuZw==/315x250%23c/l%2BiYwV.png
+    summary: Build dice-powered machines to solve logic puzzles
+    tags:
+      - Puzzle
+      - Logic
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/luckymachine
+
+  - title: ExplosiveThinking
+    category: indie
+    cover: https://img.itch.zone/aW1nLzMxODY1NTA0LnBuZw==/315x250%23c/ypMK2i.png
+    summary: A Sokoban puzzle where you can blow up the goals
+    tags:
+      - Puzzle
+      - Sokoban
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/explosivethinking
+
+  - title: TimeThief
+    category: indie
+    cover: https://img.itch.zone/aW1nLzMxNjg2NzU1LnBuZw==/347x500/cAdpUX.png
+    summary: Rewind time and follow different characters to solve a museum mystery
+    tags:
+      - Puzzle
+      - Mystery
+    links:
+      - label: itch.io
+        url: https://wenduoyue.itch.io/time
+
   - title: SelfRunner
     category: indie
     cover: https://img.itch.zone/aW1nLzMwODk3NDIyLnBuZw==/original/uchRkP.png
